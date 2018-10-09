@@ -6,19 +6,26 @@
  * @flow
  */
 
-import React, {Component} from 'react';
-import HomeScreen from './src/screen/home/homeScreen'
-import Content from './src/component/content'
-import { View} from 'react-native';
+import React, { Component } from 'react';
+import {
+  Platform,
+  StyleSheet,
+  Text,
+  View
+} from 'react-native';
+
+import { registerScreen, registerScreenVisibilityListener } from './src/screen/auth/index';
+import {Navigation} from 'react-native-navigation';
 
 
-export default class App extends Component{
-  render() {
-    return (
-      <View>
-        <Content />
-      </View>
-    );
-  }
-}
+registerScreen();
+
+Navigation.startSingleScreenApp({
+  screen: {
+      screen: 'HomeScreen',
+      navigatorStyle: {
+        tabBarHidden: true
+    }
+  },
+})
 

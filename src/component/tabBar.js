@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
 		flexDirection: 'row',
 		justifyContent: 'space-between',
 
-
+		
 	},
 	viewInput:{
 		flex: 1,
@@ -59,6 +59,9 @@ const styles = StyleSheet.create({
 		paddingTop: 10,
 	}
 	
+	
 })
 
 export default TabBar
+
+

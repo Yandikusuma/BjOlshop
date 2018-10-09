@@ -3,46 +3,111 @@ import { View, Text, TextInput, StyleSheet, Image, TouchableOpacity } from 'reac
 
 
 class Content extends Component{
+	constructor(){
+		super();
+		this.state = {
+		}
+	}
+	
+	onPress = () => {
+		this.props.navigator.push({
+			screen: 'DetailShirt',
+		})
+	}
 	render(){
 		return(
-			<View style={styles.contentView}>
-			 <Text>Pakaian Pria</Text>
-			 <View>
-				<View style={styles.imageShirt}>
-				  <TouchableOpacity>
-					  <Image
-					    style={{width: 120, height:120}}
-					    source={require('../../image/pakaian-pria.jpg')}
-					  />
-					  <View style={styles.textShirt}>
-					    <Text>Baju</Text>
-					  </View>
-					</TouchableOpacity>
+			<View>
+			  <View style={styles.contentView}>
+			   <Text>Pakaian Pria</Text>
+			    <View style={styles.contentPria}>
+			  	  <View style={styles.imageShirt}>
+							<TouchableOpacity onPress={this.onPress}>
+			  	  	  <Image
+			  	  	    style={styles.imageBaju}
+			  	  	    source={require('../../image/icon_baju.png')}
+			  	  	  />
+			  	  	  <View style={styles.textBaju}>
+			  	  	    <Text>Baju</Text>
+			  	  	  </View>
+			  	  	</TouchableOpacity>
+			  	  </View>
+			  	  <View style={styles.imageShirt}>
+			  	  	<TouchableOpacity>
+			  	  	 <Image 
+			  	  	   style={styles.imageCelana}
+			  	  	   source={require('../../image/icon-celana.png')}/>
+			  			  <View style={styles.textCelana}>
+			  				 <Text>Celana</Text>
+			  			  </View>
+			  			</TouchableOpacity>
+			  	  </View>
+			    </View>
 				</View>
-				<View>
-					<TouchableOpacity>
-					 <Image 
-					   style={{width: 120, height:120}}
-					   source={require('../../image/pakaian-pria.jpg')}/>
-					</TouchableOpacity>
+				<View style={styles.contentView}>
+			   <Text>Pakaian Wanita</Text>
+			    <View style={styles.contentPria}>
+			  	  <View style={styles.imageShirt}>
+			  	    <TouchableOpacity>
+			  	  	  <Image
+			  	  	    style={styles.imageBaju}
+			  	  	    source={require('../../image/icon_baju.png')}
+			  	  	  />
+			  	  	  <View style={styles.textBaju}>
+			  	  	    <Text>Baju</Text>
+			  	  	  </View>
+			  	  	</TouchableOpacity>
+			  	  </View>
+			  	  <View style={styles.imageShirt}>
+			  	  	<TouchableOpacity>
+			  	  	 <Image 
+			  	  	   style={styles.imageCelana}
+			  	  	   source={require('../../image/icon-celana.png')}/>
+			  			  <View style={styles.textCelana}>
+			  				 <Text>Celana</Text>
+			  			  </View>
+			  			</TouchableOpacity>
+			  	  </View>
+			    </View>
 				</View>
-			 </View>
 			</View>
 		)
 	}
 }
 
+
 const styles = StyleSheet.create({
 	contentView:{
 		backgroundColor: 'white',
-		padding: 10
+		padding        : 10
 	},
 	imageShirt:{
-		padding: 20,
+		padding     : 20,
+		borderColor : '#ddd',
+		borderWidth : 1.5,
+		borderRadius: 10,
+		marginTop   : 10
 	},
-	textShirt:{
-		paddingLeft: 25,
-		paddingTop: 10
+	contentPria:{
+		flexDirection : 'row',
+		justifyContent: 'space-between'
+	},
+	imageBaju:{
+		marginTop: 10,
+		width    : 120,
+		height   : 100
+	},
+	imageCelana:{
+		padding: 20,
+		width  : 120,
+		height : 130
+	},
+	textBaju:{
+		paddingLeft: 40,
+		paddingTop : 20
+	},
+	textCelana:{
+		paddingLeft: 35,
+		paddingTop : 4
 	}
 })
 
