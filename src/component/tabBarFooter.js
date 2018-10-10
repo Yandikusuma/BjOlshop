@@ -1,66 +1,45 @@
-import React, { Component } from 'react';
-import { View, StyleSheet, TouchableOpacity, Text } from 'react-native';
-import Stylis, { deviceWidth } from '../style/stylis'
 import Icon from 'react-native-vector-icons/Feather'
+import {Navigation} from 'react-native-navigation'
 
+const TabBarFooter = () => {
 
-
-class TabBarFooter extends Component{
-	render(){
-		return(
-			<View style={styles.container}>
-			 <View style={styles.contentIcon}>
-			   <TouchableOpacity>
-			     <View style={styles.viewIcon}>
-			    	 <Icon name="home" size={24} color="#909090" />
-			    	 <Text style={styles.textIcon}>Home</Text>
-			     </View>
-					</TouchableOpacity>
-					<TouchableOpacity>
-            <View style={styles.viewIcon}>
-              <Icon name="shopping-cart" size={24} color="#909090" />
-              <Text style={styles.textIcon}>Keranjang</Text>
-            </View>
-					</TouchableOpacity>
-					<TouchableOpacity>
-            <View style={styles.viewIcon}>
-              <Icon name="user" size={24} color="#909090" />
-              <Text style={styles.textIcon}>Akun</Text>
-            </View>
-					</TouchableOpacity>
-			 </View>
-			</View>
-		)
+Navigation.startTabBasedApp({
+	tabs:[
+		{
+		label: 'Home',
+		screen: 'HomeScreen',
+		icon: require('../../image/icon_baju.png')
+	},
+	{
+		label: 'Keranjang',
+		screen: 'Keranjang',
+		icon: require('../../image/icon_baju.png')
+	},
+	{
+		label: 'Profile',
+		screen: 'Profile',
+		icon: require('../../image/icon_baju.png')
 	}
-}
-
-
-const styles = StyleSheet.create({
-	container:{
+],
+	tabsStyle: { // optional, add this if you want to style the tab bar beyond the defaults
+		tabBarButtonColor: '#e4ff64', // optional, change the color of the tab icons and text (also unselected). On Android, add this to appStyle
+		tabBarSelectedButtonColor: '#222222', // optional, change the color of the selected tab icon and text (only selected). On Android, add this to appStyle
+		tabBarBackgroundColor: '#777777', // optional, change the background color of the tab bar
+		initialTabIndex: 1, // optional, the default selected bottom tab. Default: 0. On Android, add this to appStyle
 	},
-	contentIcon:{
-		backgroundColor: 'white',
-		position: 'absolute',
-    bottom: 0,
-		height: 50,
-		flexDirection: 'row',
-
+	appStyle: {
+    tabBarBackgroundColor: '#0f2362',
+    tabBarButtonColor: '#ffffff',
+    tabBarHideShadow: false,
+    tabBarSelectedButtonColor: '#63d7cc',
+    tabBarTranslucent: false,
+    tabFontSize: 10,
+		selectedTabFontSize: 12,
+		hideBackButtonTitle: false,// Hide back button title. Default is false. If `backButtonTitle` provided so it will take into account and the `backButtonTitle` value will show. iOS only
+    forceTitlesDisplay: true,
 	},
-	viewIcon: {
-    paddingLeft: 10,
-    paddingRight: 10,
-    width: deviceWidth / 3,
-    justifyContent: 'center',
-    alignItems: 'center',
-	},
-	textIcon: {
-    fontSize: 12,
-    paddingTop: 3,
-    alignItems: 'center',
-    justifyContent: 'center',
-    fontFamily: 'Avenir-Medium',
-    color: 'black',
-  },
+	animationType: 'none'
 })
+}
 
 export default TabBarFooter

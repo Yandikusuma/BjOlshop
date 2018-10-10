@@ -16,10 +16,10 @@ class HomeScreen extends Component{
 		return(
 				<View style={styles.headerHome}>
 				  <ScrollView>
-				    <TabBar />
+				    <TabBar navigator={this.props.navigator}/>
 						<Content navigator={this.props.navigator}/>
 					</ScrollView>
-						<TabBarFooter />
+						
 				</View>
 		)
 	}

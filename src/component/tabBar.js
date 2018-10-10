@@ -5,6 +5,11 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 
 class TabBar extends Component{
+	onPressMarket = () =>{
+		this.props.navigator.push({
+			screen: 'Keranjang'
+		})
+	}
 	render(){
 		return(
 			<View style={styles.viewSearch}>
@@ -19,7 +24,8 @@ class TabBar extends Component{
 			  		<Icon name="search" size={20} style={styles.iconSearch}/>
 			  	</TouchableOpacity>
 			  </View>
-			  <TouchableOpacity 
+				<TouchableOpacity 
+				     onPress={this.onPressMarket}
 			  		 style={styles.buttonIconS}
 			  >
 			  	<Icon name="shopping-basket" size={30} style={{color:'#bfbfbf'}}/>
@@ -40,7 +46,7 @@ const styles = StyleSheet.create({
 	viewInput:{
 		flex: 1,
 		flexDirection: 'row',
-		backgroundColor: '#d8f0f3',
+		backgroundColor: '#00004d',
 		justifyContent: 'space-between',		
 		height: 45,
 		marginRight: 40,

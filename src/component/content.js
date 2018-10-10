@@ -81,11 +81,16 @@ const styles = StyleSheet.create({
 		padding        : 10
 	},
 	imageShirt:{
+		flex: 1,
 		padding     : 20,
 		borderColor : '#ddd',
 		borderWidth : 1.5,
 		borderRadius: 10,
-		marginTop   : 10
+		marginTop   : 10,
+		alignItems: 'center',
+		marginRight: 5,
+		marginLeft: 5,
+		
 	},
 	contentPria:{
 		flexDirection : 'row',
