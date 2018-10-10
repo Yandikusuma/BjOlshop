@@ -15,17 +15,12 @@ import {
 } from 'react-native';
 
 import { registerScreen, registerScreenVisibilityListener } from './src/screen/auth/index';
+import TabBarFooter from './src/component/tabBarFooter'
 import {Navigation} from 'react-native-navigation';
 
 
 registerScreen();
 
-Navigation.startSingleScreenApp({
-  screen: {
-      screen: 'HomeScreen',
-      navigatorStyle: {
-        tabBarHidden: true
-    }
-  },
-})
+TabBarFooter()
+  
 
