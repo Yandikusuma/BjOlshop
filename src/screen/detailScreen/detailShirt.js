@@ -5,7 +5,10 @@ import ContentShirt from '../../screen/detailScreen/contentShirt'
 
 
 class DetailShirt extends Component{
-	static navigatorStyle = { navBarHidden: false}
+	static navigatorStyle = { 
+		navBarHidden: false,
+		tabBarHidden: true
+	}
 	render(){
 		return(
 			<View>
