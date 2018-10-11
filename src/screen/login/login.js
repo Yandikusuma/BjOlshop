@@ -9,7 +9,13 @@ class Login extends Component{
 		navBarTranslucent: true,
 		navBarBackgroundColor:'blue',
 		tabBarHidden: true
-	  };
+		};
+		
+		onPressDaftar = () => {
+			this.props.navigator.push({
+				screen: 'Register'
+			})
+		}
 	render(){
 		return(
 			<LinearGradient colors={[ '#001a33', '#0088cc']} style={styles.container}>
@@ -40,7 +46,10 @@ class Login extends Component{
 					<TouchableOpacity style={styles.forgotPassword}>
 					  <Text style={styles.textForgotPassword}>Forgot Password?</Text>
 					</TouchableOpacity>
-					<TouchableOpacity style={styles.daftar}>
+					<TouchableOpacity
+					  onPress={this.onPressDaftar}
+						style={styles.daftar}
+					>
 					  <LinearGradient colors={[ '#0d1a26', '#0d1a26']} style={styles.buttonDaftar}>
 			      	    <Text style={styles.textDaftar}>Buat Akun</Text>
 					  </LinearGradient>
