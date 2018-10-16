@@ -10,6 +10,11 @@ class Login extends Component{
 		navBarBackgroundColor:'blue',
 		tabBarHidden: true
 		};
+		onPressForgotPassword = () => {
+			this.props.navigator.push({
+				screen: 'ForgotPassword'
+			})
+		}
 		
 		onPressDaftar = () => {
 			this.props.navigator.push({
@@ -43,7 +48,10 @@ class Login extends Component{
 			      	<Text style={styles.textLogin}>Masuk</Text>
 						</LinearGradient>
 					</TouchableOpacity>
-					<TouchableOpacity style={styles.forgotPassword}>
+					<TouchableOpacity 
+						style={styles.forgotPassword}
+						onPress={this.onPressForgotPassword}
+					>
 					  <Text style={styles.textForgotPassword}>Forgot Password?</Text>
 					</TouchableOpacity>
 					<TouchableOpacity
@@ -90,7 +98,7 @@ const styles = StyleSheet.create({
         borderRadius: 3,
 	},
 	daftar: {
-	    alignItems: 'center',
+	      alignItems: 'center',
         justifyContent: 'center',
 	},
 	buttonDaftar: {
