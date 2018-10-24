@@ -1,4 +1,4 @@
-import Icon from 'react-native-vector-icons/Feather'
+
 import {Navigation} from 'react-native-navigation'
 
 const TabBarFooter = () => {
@@ -8,17 +8,17 @@ Navigation.startTabBasedApp({
 		{
 		label: 'Home',
 		screen: 'HomeScreen',
-		icon: require('../../image/icon_baju.png')
+		icon: require('../../image/home1.png'),
 	},
 	{
 		label: 'Keranjang',
 		screen: 'Keranjang',
-		icon: require('../../image/icon_baju.png')
+		icon: require('../../image/keranjang.png'),
 	},
 	{
 		label: 'Profile',
 		screen: 'Profile',
-		icon: require('../../image/icon_baju.png')
+		icon: require('../../image/profil.png'),		
 	}
 ],
 	tabsStyle: { // optional, add this if you want to style the tab bar beyond the defaults
@@ -29,7 +29,7 @@ Navigation.startTabBasedApp({
 	},
 	appStyle: {
     tabBarBackgroundColor: '#0f2362',
-    tabBarButtonColor: '#ffffff',
+    tabBarButtonColor: 'red',
     tabBarHideShadow: false,
     tabBarSelectedButtonColor: '#63d7cc',
     tabBarTranslucent: false,

@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
-import TabBar from '../../component/tabBar';
-import ContentShirt from '../../screen/detailScreen/contentShirt'
+import TabBar from '../../../component/tabBar';
+import ContentShirtPria from './contentShirtPria'
 
 
-class DetailShirt extends Component{
+class DetailShirtPria extends Component{
 	static navigatorStyle = { 
 		navBarHidden: false,
 		tabBarHidden: true
@@ -13,7 +13,7 @@ class DetailShirt extends Component{
 		return(
 			<View>
 				<View>
-					<ContentShirt />
+					<ContentShirtPria navigator={this.props.navigator}/>
 				</View>
 			</View>
 		)
@@ -21,4 +21,4 @@ class DetailShirt extends Component{
 }
 
 
-export default DetailShirt
+export default DetailShirtPria

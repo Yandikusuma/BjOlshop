@@ -1,18 +1,29 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, Text, Image, TouchableOpacity } from 'react-native';
+import ModalDetail from '../../../component/modal'
 
 
-class ContentShirt extends Component{
+class ContentShirtPria extends Component{
+	state = {
+		isVisible: false
+	}
+	onToggle = () => {
+		this.setState({
+			isVisible: !this.state.isVisible
+		});
+	}
 	render(){
 		return(
 			<View>
 				<View style={styles.container}>
 				  <View style={styles.containerContent}>
-				    <TouchableOpacity>
+						<TouchableOpacity 
+						  onPress={this.onToggle}
+						>
 				    	 <View style={styles.imageView}>
 				    		<Image 
 				    		  style={styles.imageContent}
-				    		  source={require('../../../image/pakaian-pria.jpg')}
+				    		  source={require('../../../../image/pakaian-pria.jpg')}
 				    		/>
 				    	 </View>
 				    	 <View>
@@ -26,7 +37,7 @@ class ContentShirt extends Component{
 					     <View style={styles.imageView}>
 				    		<Image 
 				    		  style={styles.imageContent}
-				    		  source={require('../../../image/pakaian-pria.jpg')}
+				    		  source={require('../../../../image/pakaian-pria.jpg')}
 				    		/>
 				    	 </View>
 				    	 <View>
@@ -36,6 +47,12 @@ class ContentShirt extends Component{
 						</TouchableOpacity>
 					</View>
 				</View>
+				<ModalDetail 
+					transparent={true}
+					navigator={this.props.navigator}
+				  isVisible={this.state.isVisible}
+				  onToggle={this.onToggle}
+				/>
 			</View>
 		)
 	}
@@ -48,20 +65,18 @@ const styles = StyleSheet.create({
 	},
 	containerContent: {
 		flex: 1,
-		marginTop: 50,
-		backgroundColor: 'white',
+		margin: 10,
+		backgroundColor: 'red',
 		padding: 10,
 		flexDirection: 'column'
 	},
 	imageView: {
 		alignItems: 'center',
-		borderColor : '#ddd',
-		borderWidth : 1.5,
 	},
 	imageContent: {
-		width: 100,
-		height: 100
+		width: 160,
+		height: 120
 	}
 })
 
-export default ContentShirt
+export default ContentShirtPria

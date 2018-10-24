@@ -1,5 +1,5 @@
 import React, { Component }from 'react';
-import { View,StyleSheet, TextInput, TouchableOpacity } from 'react-native';
+import { View,StyleSheet, TextInput, TouchableOpacity, Text} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 
@@ -14,55 +14,43 @@ class TabBar extends Component{
 		return(
 			<View style={styles.viewSearch}>
 			  <View style={styles.viewInput}>
-			  	<TextInput 
-			  		style={styles.inputSearch}
-			  		placeholderTextColor="#737373"
-			  		placeholder="Search your favorit"
-			  		onChangeText={(text) => this.setState({text})}
-			  	/>
-			  	<TouchableOpacity>
-			  		<Icon name="search" size={20} style={styles.iconSearch}/>
-			  	</TouchableOpacity>
+			    <Text style={styles.textTitle}>Welcome To BjOlshop</Text>
 			  </View>
-				<TouchableOpacity 
-				     onPress={this.onPressMarket}
-			  		 style={styles.buttonIconS}
-			  >
-			  	<Icon name="shopping-basket" size={30} style={{color:'#bfbfbf'}}/>
-			  </TouchableOpacity>
+				<View style={styles.buttonIconS}>
+				  <TouchableOpacity 
+				       onPress={this.onPressMarket}
+			    >
+			    	<Icon name="shopping-basket" size={30} style={{color:'#bfbfbf'}}/>
+				  </TouchableOpacity>
+				</View>
 		  </View>
 		)
 	}
 }
 const styles = StyleSheet.create({
 	viewSearch: {
-		flex: 1,
-		padding : 10,
+		padding : 15,
 		flexDirection: 'row',
 		justifyContent: 'space-between',
+		backgroundColor: '#0f2362'
 
 		
 	},
 	viewInput:{
 		flex: 1,
-		flexDirection: 'row',
-		backgroundColor: '#00004d',
-		justifyContent: 'space-between',		
-		height: 45,
-		marginRight: 40,
-		borderRadius:10,
+	},
+	textTitle: {
+		color: '#fff',
+		fontSize: 20
 	},
 	inputSearch: {
 		fontSize:16,
 		borderRadius:10,
 		paddingLeft: 10,
 	},
-	iconSearch:{
-		padding:10,
-		color: '#80d4ff'
-	},
 	buttonIconS: {
-		paddingTop: 10,
+		justifyContent: 'center',
+		alignItems: 'center'
 	}
 	
 	

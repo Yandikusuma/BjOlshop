@@ -8,19 +8,18 @@ import TabBarFooter from '../../component/tabBarFooter'
 
 class HomeScreen extends Component{
 	static navigatorStyle = {navBarHidden: true}
+
 	constructor(props){
 		super(props)
 		this.state = { 
-			homeIcons : '',
-			keranjangIcons: '',
-			profileIcons: ''
 		}
 	}
+
 	render(){
 		return(
 				<View style={styles.headerHome}>
+				  <TabBar navigator={this.props.navigator}/>
 				  <ScrollView>
-				    <TabBar navigator={this.props.navigator}/>
 						<Content navigator={this.props.navigator}/>
 					</ScrollView>
 						
@@ -31,6 +30,7 @@ class HomeScreen extends Component{
 
 const styles = StyleSheet.create({
 	headerHome: {	
+		flex: 1,
     backgroundColor: 'rgba(242, 242, 242, 0.8)',
   },
 })

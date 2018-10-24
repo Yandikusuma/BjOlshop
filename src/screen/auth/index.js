@@ -2,7 +2,9 @@ import { Navigation, ScreenVisibilityListener } from 'react-native-navigation';
 
 
 import Content from '../../component/content';
-import DetailShirt from '../detailScreen/detailShirt';
+import DetailShirtPria from '../detailScreen/pria/detailShirtPria';
+import DetailShirtWanita from '../detailScreen/wanita/detailShirtWanita';
+import BajuDetailWanita from '../detailScreen/wanita/detailBaju/bajuDetailWanita';
 import HomeScreen from '../home/homeScreen';
 import Keranjang from '../shop/keranjang';
 import Profile from '../profile/profil';
@@ -13,7 +15,9 @@ import ForgotPassword from '../login/forgotPassword';
 export function registerScreen(){
 	
 	Navigation.registerComponent('Content', () => Content)
-	Navigation.registerComponent('DetailShirt', () => DetailShirt)
+	Navigation.registerComponent('DetailShirtPria', () => DetailShirtPria)
+	Navigation.registerComponent('DetailShirtWanita', () => DetailShirtWanita)
+	Navigation.registerComponent('BajuDetailWanita', () => BajuDetailWanita)			
 	Navigation.registerComponent('HomeScreen', () => HomeScreen)
 	Navigation.registerComponent('Keranjang', () => Keranjang)
 	Navigation.registerComponent('Profile', () => Profile)

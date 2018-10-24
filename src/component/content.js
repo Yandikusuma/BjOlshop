@@ -9,9 +9,14 @@ class Content extends Component{
 		}
 	}
 	
-	onPress = () => {
+	onDetailPria = () => {
 		this.props.navigator.push({
-			screen: 'DetailShirt',
+			screen: 'DetailShirtPria',
+		})
+	}
+	onDetailWanita = () => {
+		this.props.navigator.push({
+			screen: 'DetailShirtWanita',
 		})
 	}
 	render(){
@@ -21,7 +26,7 @@ class Content extends Component{
 			   <Text>Pakaian Pria</Text>
 			    <View style={styles.contentPria}>
 			  	  <View style={styles.imageShirt}>
-							<TouchableOpacity onPress={this.onPress}>
+							<TouchableOpacity onPress={this.onDetailPria}>
 			  	  	  <Image
 			  	  	    style={styles.imageBaju}
 			  	  	    source={require('../../image/icon_baju.png')}
@@ -47,7 +52,9 @@ class Content extends Component{
 			   <Text>Pakaian Wanita</Text>
 			    <View style={styles.contentPria}>
 			  	  <View style={styles.imageShirt}>
-			  	    <TouchableOpacity>
+							<TouchableOpacity
+							  onPress={this.onDetailWanita}
+							>
 			  	  	  <Image
 			  	  	    style={styles.imageBaju}
 			  	  	    source={require('../../image/icon_baju.png')}
@@ -69,6 +76,34 @@ class Content extends Component{
 			  	  </View>
 			    </View>
 				</View>
+				<View style={styles.contentView}>
+			   <Text>Pakaian Wanita</Text>
+			    <View style={styles.contentPria}>
+			  	  <View style={styles.imageShirt}>
+							<TouchableOpacity
+							  onPress={this.onDetailWanita}
+							>
+			  	  	  <Image
+			  	  	    style={styles.imageBaju}
+			  	  	    source={require('../../image/icon_baju.png')}
+			  	  	  />
+			  	  	  <View style={styles.textBaju}>
+			  	  	    <Text>Sepatu & Sandal</Text>
+			  	  	  </View>
+			  	  	</TouchableOpacity>
+			  	  </View>
+			  	  <View style={styles.imageShirt}>
+			  	  	<TouchableOpacity>
+			  	  	 <Image 
+			  	  	   style={styles.imageCelana}
+			  	  	   source={require('../../image/icon-celana.png')}/>
+			  			  <View style={styles.textCelana}>
+			  				 <Text>Jam Tangan & Accsories</Text>
+			  			  </View>
+			  			</TouchableOpacity>
+			  	  </View>
+			    </View>
+				</View>
 			</View>
 		)
 	}
@@ -78,14 +113,15 @@ class Content extends Component{
 const styles = StyleSheet.create({
 	contentView:{
 		backgroundColor: 'white',
-		padding        : 10
+		padding        : 10,
+		backgroundColor: '#e6e6e6'
 	},
 	imageShirt:{
 		flex: 1,
 		padding     : 20,
-		borderColor : '#ddd',
+		borderColor : '#000f1a',
 		borderWidth : 1.5,
-		borderRadius: 10,
+		borderRadius: 5,
 		marginTop   : 10,
 		alignItems: 'center',
 		marginRight: 5,

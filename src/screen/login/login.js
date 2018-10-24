@@ -8,7 +8,8 @@ class Login extends Component{
 		drawUnderNavBar: true,
 		navBarTranslucent: true,
 		navBarBackgroundColor:'blue',
-		tabBarHidden: true
+		tabBarHidden: true,
+
 		};
 		onPressForgotPassword = () => {
 			this.props.navigator.push({

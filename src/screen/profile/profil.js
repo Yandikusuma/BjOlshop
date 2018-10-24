@@ -1,9 +1,18 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, TouchableOpacity, Text } from 'react-native';
+import TabBarFooter from '../../component/tabBarFooter';
+import Icon from 'react-native-vector-icons/FontAwesome';
+
 
 
 class Profile extends Component{
 	static navigatorStyle={navBarHidden: true}
+	constructor(props){
+		super(props)
+		this.state = { 
+		}
+	}
+
 
 	onPressLogin= () => {
 		this.props.navigator.push({
@@ -42,12 +51,12 @@ const styles = StyleSheet.create({
     backgroundColor: 'red',
 	},
 	viewProfile: {
-		backgroundColor: 'grey',
+		backgroundColor: '#19334d',
 		alignItems: 'center',
 		justifyContent: 'center'
 	},
 	buttonLogin: {
-		backgroundColor: 'blue',
+		backgroundColor: '#19484d',
 	},
 	textLogin: {
 		padding: 20,

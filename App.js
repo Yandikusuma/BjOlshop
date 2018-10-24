@@ -17,10 +17,13 @@ import {
 import { registerScreen, registerScreenVisibilityListener } from './src/screen/auth/index';
 import TabBarFooter from './src/component/tabBarFooter'
 import {Navigation} from 'react-native-navigation';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 
 registerScreen();
 
-TabBarFooter()
-  
+function createTab(){
+  TabBarFooter()
+}
 
+createTab()
