@@ -4,6 +4,7 @@ import { Navigation, ScreenVisibilityListener } from 'react-native-navigation';
 import Content from '../../component/content';
 import DetailShirtPria from '../detailScreen/pria/detailShirtPria';
 import DetailShirtWanita from '../detailScreen/wanita/detailShirtWanita';
+import DetailPantsPria from '../detailScreen/pria/detailPantsPria';
 import BajuDetailWanita from '../detailScreen/wanita/detailBaju/bajuDetailWanita';
 import HomeScreen from '../home/homeScreen';
 import Keranjang from '../shop/keranjang';
@@ -16,6 +17,7 @@ export function registerScreen(){
 	
 	Navigation.registerComponent('Content', () => Content)
 	Navigation.registerComponent('DetailShirtPria', () => DetailShirtPria)
+	Navigation.registerComponent('DetailPantsPria', () => DetailPantsPria)	
 	Navigation.registerComponent('DetailShirtWanita', () => DetailShirtWanita)
 	Navigation.registerComponent('BajuDetailWanita', () => BajuDetailWanita)			
 	Navigation.registerComponent('HomeScreen', () => HomeScreen)

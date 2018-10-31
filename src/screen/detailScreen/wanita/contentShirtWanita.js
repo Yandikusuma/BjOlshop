@@ -37,13 +37,13 @@ class ContentShirtWanita extends Component {
 			  					source={require('../../../../image/pakaian-pria.jpg')}
 			  				/>
 			  			 </View>
-			  			 <View>
+			  			 <View style={styles.text}>
 			  				<Text>merek: Kemeja</Text>
 			  				<Text>harga: Rp250.000</Text>
 			  			 </View>
 			  		</TouchableOpacity>
 			  	</View>
-			  	<View style={styles.containerContent}>
+			  	<View style={styles.containerContent1}>
 						<TouchableOpacity
 						  onPress={this.onPressModal}
 						>
@@ -53,7 +53,7 @@ class ContentShirtWanita extends Component {
 			  					source={require('../../../../image/pakaian-pria.jpg')}
 			  				/>
 			  			 </View>
-			  			 <View>
+			  			 <View style={styles.text}>
 			  				<Text>merk :</Text>
 			  				<Text>harga</Text>
 			  			 </View>
@@ -78,17 +78,27 @@ container: {
 },
 containerContent: {
 	flex: 1,
-	margin: 10,
+	margin: 3,
 	backgroundColor: 'aqua',
-	padding: 10,
 	flexDirection: 'column'
+},
+containerContent1: {
+	flex: 1,
+	margin: 3,
+	flexDirection: 'column',
+	backgroundColor: 'aqua',
+	
 },
 imageView: {
 	alignItems: 'center',
 },
 imageContent: {
-	width: 160,
-	height: 170
+	width: "100%",
+	height: 200
+},
+text:{
+	backgroundColor: 'red',
+	paddingLeft: 10
 },
 modal: {
 	flex: 1,

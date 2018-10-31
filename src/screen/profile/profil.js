@@ -21,17 +21,32 @@ class Profile extends Component{
 	}
 	render(){
 		return(
-			<View>
+			<View style={{backgroundColor: "#e6e6e6", flex: 1}}>
 				<View style={styles.sliderHome}>
 				</View>
+				<View style={styles.container}>
 					<View style={styles.viewProfile}>
 						<TouchableOpacity
 						 onPress={this.onPressLogin}
 						 style={styles.buttonLogin}
-						>
-						  <Text style={styles.textLogin}>Login</Text>
+						> 
+						  <Icon name="user" size={32} color="red"/>
+						  <Text style={styles.text}>Akun Saya</Text>
 						</TouchableOpacity>
 					</View>
+					<View style={styles.viewBantuan}>
+					 <TouchableOpacity style={styles.buttonBantuan}>
+					   <Icon name="question" size={35} color="red"/>
+					   <Text style={styles.text}>Bantuan</Text>
+					 </TouchableOpacity>
+					</View>
+					<View style={styles.viewTentang}>
+						<TouchableOpacity style={styles.buttonTentang}>
+						  <Icon name="exclamation" size={35} color="red" />
+						  <Text style={styles.text}>Tentang</Text>
+						</TouchableOpacity>
+					</View>
+				</View>
 			</View>
 		)
 	}
@@ -40,27 +55,49 @@ class Profile extends Component{
 const styles = StyleSheet.create({
 	sliderHome: {
     height: 200,
-    marginTop: 15,
-    marginLeft: 15,
-    marginRight: 15,
-    marginBottom: 8,
-    borderTopLeftRadius: 5,
-    borderTopRightRadius: 5,
-    borderBottomLeftRadius: 2,
-    borderBottomRightRadius: 2,
     backgroundColor: 'red',
 	},
+	container: {
+		marginTop: 20,
+		backgroundColor: '#fff',
+		paddingTop: 10,
+		paddingBottom: 160
+	},
 	viewProfile: {
-		backgroundColor: '#19334d',
-		alignItems: 'center',
-		justifyContent: 'center'
+		borderBottomWidth: 1,
+		borderColor: 'grey',
+		paddingTop: 20,
+		paddingBottom: 20
 	},
 	buttonLogin: {
-		backgroundColor: '#19484d',
+		flexDirection: 'row',
+		paddingLeft: 10
+		
 	},
-	textLogin: {
-		padding: 20,
-	}
+	text: {
+		paddingLeft: 15,
+		fontSize: 20
+	},
+	viewBantuan: {
+		borderBottomWidth: 2,
+		borderColor: 'grey',
+		paddingTop: 20,
+		paddingBottom: 20
+	},
+	buttonBantuan: {
+		flexDirection: 'row',
+		paddingLeft: 10
+	},
+	viewTentang: {
+		borderBottomWidth: 2,
+		borderColor: 'grey',
+		paddingTop: 20,
+		paddingBottom: 20
+	},
+	buttonTentang: {
+		flexDirection: 'row',
+		paddingLeft: 13
+	},
 })
 
 export default Profile

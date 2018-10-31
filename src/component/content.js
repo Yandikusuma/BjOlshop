@@ -19,6 +19,11 @@ class Content extends Component{
 			screen: 'DetailShirtWanita',
 		})
 	}
+	onDetailPantsPria = () => {
+		this.props.navigator.push({
+			screen: 'DetailPantsPria'
+		})
+	}
 	render(){
 		return(
 			<View>
@@ -37,10 +42,13 @@ class Content extends Component{
 			  	  	</TouchableOpacity>
 			  	  </View>
 			  	  <View style={styles.imageShirt}>
-			  	  	<TouchableOpacity>
-			  	  	 <Image 
+							<TouchableOpacity
+							  onPress={this.onDetailPantsPria}
+							>
+			  	  	  <Image 
 			  	  	   style={styles.imageCelana}
-			  	  	   source={require('../../image/icon-celana.png')}/>
+								 source={require('../../image/icon-celana.png')}
+							  />
 			  			  <View style={styles.textCelana}>
 			  				 <Text>Celana</Text>
 			  			  </View>

@@ -27,10 +27,10 @@ const ModalDetail = ({ onToggle, isVisible, navigator }) => {
 						     />
 							 </View>
 							 <View>
-								 <Text>Merek: Kemeja</Text>
-								 <Text>Harge: Rp250.000</Text>
-								 <Text>Kualitas: Standard</Text>
-								 <Text>Stock: Terakhir</Text>						 								 						 
+								 <Text style={styles.text}>Merek: Kemeja</Text>
+								 <Text style={styles.text}>Harge: Rp250.000</Text>
+								 <Text style={styles.text}>Kualitas: Standard</Text>
+								 <Text style={styles.text}>Stock: Terakhir</Text>						 								 						 
 							 </View>
 							 <View style={styles.modalKeranjang}>
 								 <TouchableOpacity
@@ -89,6 +89,9 @@ const styles = StyleSheet.create({
 		height: 40,
 		alignItems: 'center',
 		justifyContent: 'center',
+	},
+	text: {
+		color: 'white'
 	}
 })
 

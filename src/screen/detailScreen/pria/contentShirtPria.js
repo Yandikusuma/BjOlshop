@@ -32,7 +32,7 @@ class ContentShirtPria extends Component{
 				    	 </View>
 						</TouchableOpacity>
 					</View>
-					<View style={styles.containerContent}>
+					<View style={styles.containerContent1}>
 					  <TouchableOpacity>
 					     <View style={styles.imageView}>
 				    		<Image 
@@ -65,17 +65,22 @@ const styles = StyleSheet.create({
 	},
 	containerContent: {
 		flex: 1,
-		margin: 10,
 		backgroundColor: 'red',
-		padding: 10,
+		margin: 3,
+		flexDirection: 'column'
+	},
+	containerContent1: {
+		flex: 1,
+		margin: 3,
+		backgroundColor: 'red',
 		flexDirection: 'column'
 	},
 	imageView: {
 		alignItems: 'center',
 	},
 	imageContent: {
-		width: 160,
-		height: 120
+		width: "100%",
+		height: 200
 	}
 })
 

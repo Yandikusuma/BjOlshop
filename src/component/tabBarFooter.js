@@ -13,12 +13,12 @@ Navigation.startTabBasedApp({
 	{
 		label: 'Keranjang',
 		screen: 'Keranjang',
-		icon: require('../../image/keranjang.png'),
+		icon: require('../../image/shopping-cart-icon-2.png'),
 	},
 	{
 		label: 'Profile',
 		screen: 'Profile',
-		icon: require('../../image/profil.png'),		
+		icon: require('../../image/user1.png'),		
 	}
 ],
 	tabsStyle: { // optional, add this if you want to style the tab bar beyond the defaults
@@ -33,8 +33,8 @@ Navigation.startTabBasedApp({
     tabBarHideShadow: false,
     tabBarSelectedButtonColor: '#63d7cc',
     tabBarTranslucent: false,
-    tabFontSize: 10,
-		selectedTabFontSize: 12,
+    tabFontSize: 15,
+		selectedTabFontSize: 15,
 		hideBackButtonTitle: false,// Hide back button title. Default is false. If `backButtonTitle` provided so it will take into account and the `backButtonTitle` value will show. iOS only
     forceTitlesDisplay: true,
 	},
