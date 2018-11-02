@@ -23,12 +23,12 @@ class ContentShirtPria extends Component{
 				    	 <View style={styles.imageView}>
 				    		<Image 
 				    		  style={styles.imageContent}
-				    		  source={require('../../../../image/pakaian-pria.jpg')}
+				    		  source={require('../../../../image/baju_pria1.jpg')}
 				    		/>
 				    	 </View>
 				    	 <View>
-				    		<Text>merk</Text>
-				    		<Text>harga</Text>
+				    		<Text>Merek:</Text>
+				    		<Text>Harga:</Text>
 				    	 </View>
 						</TouchableOpacity>
 					</View>
@@ -37,12 +37,12 @@ class ContentShirtPria extends Component{
 					     <View style={styles.imageView}>
 				    		<Image 
 				    		  style={styles.imageContent}
-				    		  source={require('../../../../image/pakaian-pria.jpg')}
+				    		  source={require('../../../../image/baju_pria.png')}
 				    		/>
 				    	 </View>
 				    	 <View>
-				    		<Text>merk</Text>
-				    		<Text>harga</Text>
+				    		<Text>Merek:</Text>
+				    		<Text>Harga:</Text>
 				    	 </View>
 						</TouchableOpacity>
 					</View>

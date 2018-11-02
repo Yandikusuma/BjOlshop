@@ -19,6 +19,11 @@ class Content extends Component{
 			screen: 'DetailShirtWanita',
 		})
 	}
+	onDetailJam = () => {
+		this.props.navigator.push({
+			screen: 'DetailJam'
+		})
+	}
 	onDetailPantsPria = () => {
 		this.props.navigator.push({
 			screen: 'DetailPantsPria'
@@ -34,10 +39,10 @@ class Content extends Component{
 							<TouchableOpacity onPress={this.onDetailPria}>
 			  	  	  <Image
 			  	  	    style={styles.imageBaju}
-			  	  	    source={require('../../image/icon_baju.png')}
+			  	  	    source={require('../../image/mens-shirt.png')}
 			  	  	  />
 			  	  	  <View style={styles.textBaju}>
-			  	  	    <Text>Baju</Text>
+			  	  	    <Text style={styles.text}>Clothes</Text>
 			  	  	  </View>
 			  	  	</TouchableOpacity>
 			  	  </View>
@@ -47,10 +52,10 @@ class Content extends Component{
 							>
 			  	  	  <Image 
 			  	  	   style={styles.imageCelana}
-								 source={require('../../image/icon-celana.png')}
+								 source={require('../../image/jeans_pria.png')}
 							  />
 			  			  <View style={styles.textCelana}>
-			  				 <Text>Celana</Text>
+			  				 <Text style={styles.text}>Pants</Text>
 			  			  </View>
 			  			</TouchableOpacity>
 			  	  </View>
@@ -65,10 +70,10 @@ class Content extends Component{
 							>
 			  	  	  <Image
 			  	  	    style={styles.imageBaju}
-			  	  	    source={require('../../image/icon_baju.png')}
+			  	  	    source={require('../../image/womans-collared-tshirt.png')}
 			  	  	  />
 			  	  	  <View style={styles.textBaju}>
-			  	  	    <Text>Baju</Text>
+			  	  	    <Text style={styles.text}>Clothes</Text>
 			  	  	  </View>
 			  	  	</TouchableOpacity>
 			  	  </View>
@@ -76,37 +81,39 @@ class Content extends Component{
 			  	  	<TouchableOpacity>
 			  	  	 <Image 
 			  	  	   style={styles.imageCelana}
-			  	  	   source={require('../../image/icon-celana.png')}/>
+			  	  	   source={require('../../image/womans-jeans.png')}/>
 			  			  <View style={styles.textCelana}>
-			  				 <Text>Celana</Text>
+			  				 <Text style={styles.text}>Pants</Text>
 			  			  </View>
 			  			</TouchableOpacity>
 			  	  </View>
 			    </View>
 				</View>
 				<View style={styles.contentView}>
-			   <Text>Pakaian Wanita</Text>
+			   <Text>Accessories</Text>
 			    <View style={styles.contentPria}>
 			  	  <View style={styles.imageShirt}>
 							<TouchableOpacity
 							  onPress={this.onDetailWanita}
 							>
 			  	  	  <Image
-			  	  	    style={styles.imageBaju}
-			  	  	    source={require('../../image/icon_baju.png')}
+			  	  	    style={styles.imageSepatu}
+			  	  	    source={require('../../image/shoes.png')}
 			  	  	  />
 			  	  	  <View style={styles.textBaju}>
-			  	  	    <Text>Sepatu & Sandal</Text>
+			  	  	    <Text style={styles.text}>Sepatu</Text>
 			  	  	  </View>
 			  	  	</TouchableOpacity>
 			  	  </View>
 			  	  <View style={styles.imageShirt}>
-			  	  	<TouchableOpacity>
+							<TouchableOpacity
+							  onPress={this.onDetailJam}
+							>
 			  	  	 <Image 
-			  	  	   style={styles.imageCelana}
-			  	  	   source={require('../../image/icon-celana.png')}/>
+			  	  	   style={styles.imageJam}
+			  	  	   source={require('../../image/Watch-icon.png')}/>
 			  			  <View style={styles.textCelana}>
-			  				 <Text>Jam Tangan & Accsories</Text>
+			  				 <Text style={styles.text}>Jam Tangan</Text>
 			  			  </View>
 			  			</TouchableOpacity>
 			  	  </View>
@@ -122,13 +129,14 @@ const styles = StyleSheet.create({
 	contentView:{
 		backgroundColor: 'white',
 		padding        : 10,
+		alignItems     : 'center',		
 		backgroundColor: '#e6e6e6'
 	},
 	imageShirt:{
 		flex: 1,
 		padding     : 20,
 		borderColor : '#000f1a',
-		borderWidth : 1.5,
+		borderWidth : 1,
 		borderRadius: 5,
 		marginTop   : 10,
 		alignItems: 'center',
@@ -138,25 +146,36 @@ const styles = StyleSheet.create({
 	},
 	contentPria:{
 		flexDirection : 'row',
-		justifyContent: 'space-between'
+		justifyContent: 'space-between',
 	},
 	imageBaju:{
-		marginTop: 10,
-		width    : 120,
-		height   : 100
+		marginTop: 5,
+		width    : 160,
+		height   : 120,
 	},
 	imageCelana:{
 		padding: 20,
-		width  : 120,
+		width  : 160,
 		height : 130
 	},
+	imageSepatu: {
+		width: 180,
+		height: 160
+	},
+	imageJam: {
+		width: 160,
+		height: 160
+	},
+	text: {
+		fontSize: 25,
+	},
 	textBaju:{
-		paddingLeft: 40,
-		paddingTop : 20
+		alignItems: 'center',
+		paddingTop: 20
 	},
 	textCelana:{
-		paddingLeft: 35,
-		paddingTop : 4
+		alignItems: 'center',
+		paddingTop: 20
 	}
 })
 

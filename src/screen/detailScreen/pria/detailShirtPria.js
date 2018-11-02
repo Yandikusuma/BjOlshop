@@ -11,11 +11,9 @@ class DetailShirtPria extends Component{
 	}
 	render(){
 		return(
-			<View>
 				<View>
 					<ContentShirtPria navigator={this.props.navigator}/>
 				</View>
-			</View>
 		)
 	}
 }

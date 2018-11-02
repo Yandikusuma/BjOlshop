@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
 		fontSize: 20
 	},
 	viewBantuan: {
-		borderBottomWidth: 2,
+		borderBottomWidth: 1,
 		borderColor: 'grey',
 		paddingTop: 20,
 		paddingBottom: 20
@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
 		paddingLeft: 10
 	},
 	viewTentang: {
-		borderBottomWidth: 2,
+		borderBottomWidth: 1,
 		borderColor: 'grey',
 		paddingTop: 20,
 		paddingBottom: 20

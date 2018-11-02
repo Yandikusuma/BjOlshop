@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import TabBarFooter from '../../component/tabBarFooter';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
@@ -14,24 +14,38 @@ class Keranjang extends Component{
 		this.state = { 
 		}
 	}
+	onPressDetail = () => {
+		this.props.navigator.push({
+			screen: 'DetailScreen',
+		});
+
+	}
 
 	render(){
 		return(
-			<View>
-			  <TouchableOpacity>
+			<View style={{flex: 1}}>
+				<TouchableOpacity
+				  onPress={this.onPressDetail}
+				>
 				  <View style={styles.container}>
-				  	<View style={styles.iconGambar}>
+						<View style={styles.iconGambar}>
+							<Image 
+							  style={styles.imageContent}
+							  source={require('../../../image/pakaian-pria.jpg')}
+							/>
 						</View>
+						<View style={styles.textIcon}>
 				  	  <View style={styles.text}>
 						  	<Text>Merek: </Text>
 						  	<Text>Harga: </Text>
-				  	    <Text></Text>							
-							</View>
-							<View style={styles.delate}>
+				  	    <Text> </Text>							
+						  </View>
+						  <View style={styles.delate}>
 						    <TouchableOpacity>
-					       <Text>hahah</Text>
-							  </TouchableOpacity>
-							</View>
+						  	   <Icon name="trash" size={30} style={{color:'#63d7cc'}}/>
+						    </TouchableOpacity>
+						  </View>
+						</View>
 					</View>
 				</TouchableOpacity>
 			</View>
@@ -51,13 +65,21 @@ const styles = StyleSheet.create({
 		width: 100
 		
 	},
+	textIcon: {
+		flex: 1,
+		justifyContent: 'space-between',
+		flexDirection: 'row'
+	},
+	imageContent: {
+		width: 100,
+		height: 80
+	},
 	text: {
 		flexDirection: 'column',
 		marginLeft: 10
 	},
 	delate: {
-		marginLeft: 170,
-		backgroundColor: 'aqua',
+		backgroundColor: 'blue',
 		alignItems: 'center',
 		justifyContent: 'center',
 		width: 80

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, Text, TouchableOpacity, Image, } from 'react-native';
+import { StyleSheet, View, Text, TouchableOpacity, Image, Alert, } from 'react-native';
 import Modal from 'react-native-modal';
 
 
@@ -7,9 +7,14 @@ const ModalDetail = ({ onToggle, isVisible, navigator }) => {
 	onPressDetail = () => {
 		onToggle()
 		navigator.push({
-			screen: 'BajuDetailWanita',
+			screen: 'DetailScreen',
 		});
 
+	}
+	onPressTambah = () => {
+		Alert.alert(
+			"Sukses"
+		)
 	}
 	return(
 		    <Modal 
@@ -34,7 +39,8 @@ const ModalDetail = ({ onToggle, isVisible, navigator }) => {
 							 </View>
 							 <View style={styles.modalKeranjang}>
 								 <TouchableOpacity
-									 style={styles.buttonDetail}								  
+									 style={styles.buttonDetail}
+									 onPress={this.onPressTambah}								  
 								 >
 								   <Text>Tambah Kekeranjang</Text>
 								 </TouchableOpacity>

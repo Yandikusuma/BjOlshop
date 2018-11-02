@@ -34,12 +34,12 @@ class ContentShirtWanita extends Component {
 			  			 <View style={styles.imageView}>
 			  				<Image 
 			  					style={styles.imageContent}
-			  					source={require('../../../../image/pakaian-pria.jpg')}
+			  					source={require('../../../../image/baju_wanita.jpg')}
 			  				/>
 			  			 </View>
 			  			 <View style={styles.text}>
-			  				<Text>merek: Kemeja</Text>
-			  				<Text>harga: Rp250.000</Text>
+			  				<Text>Merek: </Text>
+			  				<Text>Harga: </Text>
 			  			 </View>
 			  		</TouchableOpacity>
 			  	</View>
@@ -50,12 +50,12 @@ class ContentShirtWanita extends Component {
 			  			 <View style={styles.imageView}>
 			  				<Image 
 			  					style={styles.imageContent}
-			  					source={require('../../../../image/pakaian-pria.jpg')}
+			  					source={require('../../../../image/baju_wanita1.jpeg')}
 			  				/>
 			  			 </View>
 			  			 <View style={styles.text}>
-			  				<Text>merk :</Text>
-			  				<Text>harga</Text>
+			  				<Text>Merek:</Text>
+			  				<Text>Harga:</Text>
 			  			 </View>
 			  		</TouchableOpacity>
 			  	</View>
@@ -74,7 +74,7 @@ class ContentShirtWanita extends Component {
 
 const styles = StyleSheet.create({
 container: {
-	flexDirection: 'row'
+	flexDirection: 'row',
 },
 containerContent: {
 	flex: 1,
