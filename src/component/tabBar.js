@@ -1,6 +1,7 @@
 import React, { Component }from 'react';
 import { View,StyleSheet, TextInput, TouchableOpacity, Text} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import LinearGradient from 'react-native-linear-gradient'
 
 
 
@@ -12,7 +13,7 @@ class TabBar extends Component{
 	}
 	render(){
 		return(
-			<View style={styles.viewSearch}>
+			<LinearGradient colors={[ '#00001a', '#00001a']} style={styles.viewSearch}>
 			  <View style={styles.viewInput}>
 			    <Text style={styles.textTitle}>Welcome To BjOlshop</Text>
 			  </View>
@@ -23,7 +24,7 @@ class TabBar extends Component{
 			    	<Icon name="shopping-basket" size={30} style={{color:'#bfbfbf'}}/>
 				  </TouchableOpacity>
 				</View>
-		  </View>
+		  </LinearGradient>
 		)
 	}
 }
@@ -32,7 +33,6 @@ const styles = StyleSheet.create({
 		padding : 15,
 		flexDirection: 'row',
 		justifyContent: 'space-between',
-		backgroundColor: '#0f2362'
 
 		
 	},
@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
 		flex: 1,
 	},
 	textTitle: {
-		color: '#fff',
+		color: '#63d7cc',
 		fontSize: 20
 	},
 	inputSearch: {

@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
-import ContentJam from './contentJam';
+import ContentSepatu from './contentSepatu';
 import TabBar from '../../../../component/tabBar'
 
-export default class DetailJam extends Component{
+
+export default class DetailSepatu extends Component{
 	static navigatorStyle = { 
 		navBarHidden: true,
 		tabBarHidden: true
@@ -11,8 +12,8 @@ export default class DetailJam extends Component{
 	render(){
 		return(
 			<View>
-			 <TabBar />
-			 <ContentJam />
+			  <TabBar />
+			  <ContentSepatu />
 			</View>
 		)
 	}

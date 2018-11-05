@@ -28,7 +28,7 @@ Navigation.startTabBasedApp({
 		initialTabIndex: 1, // optional, the default selected bottom tab. Default: 0. On Android, add this to appStyle
 	},
 	appStyle: {
-    tabBarBackgroundColor: '#0f2362',
+    tabBarBackgroundColor: '#00001a',
     tabBarButtonColor: 'red',
     tabBarHideShadow: false,
     tabBarSelectedButtonColor: '#63d7cc',

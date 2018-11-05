@@ -23,7 +23,7 @@ class Keranjang extends Component{
 
 	render(){
 		return(
-			<View style={{flex: 1}}>
+			<View style={{flex: 1, backgroundColor: '#bfbfbf'}}>
 				<TouchableOpacity
 				  onPress={this.onPressDetail}
 				>
@@ -31,18 +31,17 @@ class Keranjang extends Component{
 						<View style={styles.iconGambar}>
 							<Image 
 							  style={styles.imageContent}
-							  source={require('../../../image/pakaian-pria.jpg')}
+							  source={require('../../../image/sepatu.jpeg')}
 							/>
 						</View>
 						<View style={styles.textIcon}>
 				  	  <View style={styles.text}>
-						  	<Text>Merek: </Text>
-						  	<Text>Harga: </Text>
-				  	    <Text> </Text>							
+						  	<Text>Merek: Sepatu Nike Versi Terbaru,Elegan,  </Text>
+						  	<Text>Harga: </Text>						
 						  </View>
 						  <View style={styles.delate}>
 						    <TouchableOpacity>
-						  	   <Icon name="trash" size={30} style={{color:'#63d7cc'}}/>
+						  	   <Icon name="trash" size={30} style={{color: 'white'}}/>
 						    </TouchableOpacity>
 						  </View>
 						</View>
@@ -55,14 +54,16 @@ class Keranjang extends Component{
 
 const styles = StyleSheet.create({
 	container: {
-		backgroundColor: 'grey',
+		backgroundColor: '#fff',
 		height: 80,
 		flexDirection: 'row',
-		marginTop: 10,
+		margin: 10,
 	},
 	iconGambar: {
 		backgroundColor: 'red',
-		width: 100
+		width: 102,
+		borderRightWidth: 2,
+		borderColor: 'grey'
 		
 	},
 	textIcon: {
@@ -76,13 +77,15 @@ const styles = StyleSheet.create({
 	},
 	text: {
 		flexDirection: 'column',
-		marginLeft: 10
+		justifyContent: 'space-between',		
+		margin: 10,
 	},
 	delate: {
-		backgroundColor: 'blue',
+		backgroundColor: 'grey',
 		alignItems: 'center',
 		justifyContent: 'center',
-		width: 80
+		width: 80,
+		borderRadius: 5
 	}
 })
 

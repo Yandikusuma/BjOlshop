@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, TextInput, StyleSheet, Image, TouchableOpacity } from 'react-native';
-
+import LinearGradient from 'react-native-linear-gradient'
 
 class Content extends Component{
 	constructor(){
@@ -24,16 +24,26 @@ class Content extends Component{
 			screen: 'DetailJam'
 		})
 	}
+	onDetailSepatu = () => {
+		this.props.navigator.push({
+			screen: 'DetailSepatu'
+		})
+	}
 	onDetailPantsPria = () => {
 		this.props.navigator.push({
 			screen: 'DetailPantsPria'
 		})
 	}
+	onDetailPantsWanita = () => {
+		this.props.navigator.push({
+			screen: 'DetailPantsWanita'
+		})
+	}
 	render(){
 		return(
-			<View>
-			  <View style={styles.contentView}>
-			   <Text>Pakaian Pria</Text>
+			<LinearGradient  colors={[ '#4d0000', '#ff3300']} style={styles.contentView}>
+			  <View>
+			   <Text style={styles.categori}>Pakaian Pria</Text>
 			    <View style={styles.contentPria}>
 			  	  <View style={styles.imageShirt}>
 							<TouchableOpacity onPress={this.onDetailPria}>
@@ -46,7 +56,7 @@ class Content extends Component{
 			  	  	  </View>
 			  	  	</TouchableOpacity>
 			  	  </View>
-			  	  <View style={styles.imageShirt}>
+			  	  <View style={styles.imagePants}>
 							<TouchableOpacity
 							  onPress={this.onDetailPantsPria}
 							>
@@ -61,8 +71,8 @@ class Content extends Component{
 			  	  </View>
 			    </View>
 				</View>
-				<View style={styles.contentView}>
-			   <Text>Pakaian Wanita</Text>
+				<View style={{marginTop: 20}}>
+			   <Text style={styles.categori}>Pakaian Wanita</Text>
 			    <View style={styles.contentPria}>
 			  	  <View style={styles.imageShirt}>
 							<TouchableOpacity
@@ -77,8 +87,10 @@ class Content extends Component{
 			  	  	  </View>
 			  	  	</TouchableOpacity>
 			  	  </View>
-			  	  <View style={styles.imageShirt}>
-			  	  	<TouchableOpacity>
+			  	  <View style={styles.imagePants}>
+							<TouchableOpacity
+							  onPress={this.onDetailPantsWanita}
+							>
 			  	  	 <Image 
 			  	  	   style={styles.imageCelana}
 			  	  	   source={require('../../image/womans-jeans.png')}/>
@@ -89,23 +101,23 @@ class Content extends Component{
 			  	  </View>
 			    </View>
 				</View>
-				<View style={styles.contentView}>
-			   <Text>Accessories</Text>
+				<View style={{marginTop: 20}}>
+			   <Text style={styles.categori}>Accessories</Text>
 			    <View style={styles.contentPria}>
 			  	  <View style={styles.imageShirt}>
 							<TouchableOpacity
-							  onPress={this.onDetailWanita}
+							  onPress={this.onDetailSepatu}
 							>
 			  	  	  <Image
 			  	  	    style={styles.imageSepatu}
-			  	  	    source={require('../../image/shoes.png')}
+			  	  	    source={require('../../image/shoes1.png')}
 			  	  	  />
-			  	  	  <View style={styles.textBaju}>
-			  	  	    <Text style={styles.text}>Sepatu</Text>
+			  	  	  <View style={styles.textSepatu}>
+			  	  	    <Text style={styles.text}>Shoes</Text>
 			  	  	  </View>
 			  	  	</TouchableOpacity>
 			  	  </View>
-			  	  <View style={styles.imageShirt}>
+			  	  <View style={styles.imagePants}>
 							<TouchableOpacity
 							  onPress={this.onDetailJam}
 							>
@@ -113,13 +125,13 @@ class Content extends Component{
 			  	  	   style={styles.imageJam}
 			  	  	   source={require('../../image/Watch-icon.png')}/>
 			  			  <View style={styles.textCelana}>
-			  				 <Text style={styles.text}>Jam Tangan</Text>
+			  				 <Text style={styles.text}>Watch</Text>
 			  			  </View>
 			  			</TouchableOpacity>
 			  	  </View>
 			    </View>
 				</View>
-			</View>
+			</LinearGradient>
 		)
 	}
 }
@@ -127,22 +139,32 @@ class Content extends Component{
 
 const styles = StyleSheet.create({
 	contentView:{
-		backgroundColor: 'white',
 		padding        : 10,
-		alignItems     : 'center',		
-		backgroundColor: '#e6e6e6'
 	},
 	imageShirt:{
 		flex: 1,
 		padding     : 20,
 		borderColor : '#000f1a',
-		borderWidth : 1,
 		borderRadius: 5,
-		marginTop   : 10,
-		alignItems: 'center',
+		backgroundColor: 'yellow',
+		alignItems: 'center',		
 		marginRight: 5,
 		marginLeft: 5,
 		
+	},
+	categori: {
+		color: 'white',
+		fontSize: 20
+	},
+	imagePants: {
+		flex: 1,
+		padding     : 20,
+		borderColor : '#000f1a',
+		backgroundColor: 'yellow',		
+		borderRadius: 5,
+		alignItems: 'center',
+		marginRight: 5,
+		marginLeft: 5,
 	},
 	contentPria:{
 		flexDirection : 'row',
@@ -150,32 +172,36 @@ const styles = StyleSheet.create({
 	},
 	imageBaju:{
 		marginTop: 5,
-		width    : 160,
-		height   : 120,
+		width    : 180,
+		height   : 160,
 	},
 	imageCelana:{
 		padding: 20,
-		width  : 160,
-		height : 130
+		width  : 180,
+		height : 160
 	},
 	imageSepatu: {
 		width: 180,
 		height: 160
 	},
 	imageJam: {
-		width: 160,
-		height: 160
+		width: 180,
+		height: 150
 	},
 	text: {
 		fontSize: 25,
+		color: 'red'
 	},
 	textBaju:{
 		alignItems: 'center',
-		paddingTop: 20
+		marginTop: 10			
 	},
 	textCelana:{
 		alignItems: 'center',
-		paddingTop: 20
+		marginTop: 15
+	},
+	textSepatu:{
+		alignItems: 'center',
 	}
 })
 
