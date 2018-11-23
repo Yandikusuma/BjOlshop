@@ -5,23 +5,11 @@ import LinearGradient from 'react-native-linear-gradient';
 
 class Login extends Component{
 	static navigatorStyle = {
-		drawUnderNavBar: true,
-		navBarTranslucent: true,
-		navBarBackgroundColor:'blue',
 		tabBarHidden: true,
+		navBarHidden: true
 
 		};
-		onPressForgotPassword = () => {
-			this.props.navigator.push({
-				screen: 'ForgotPassword'
-			})
-		}
 		
-		onPressDaftar = () => {
-			this.props.navigator.push({
-				screen: 'Register'
-			})
-		}
 	render(){
 		return(
 			<LinearGradient colors={[ '#001a33', '#0088cc']} style={styles.container}>
@@ -49,20 +37,6 @@ class Login extends Component{
 			      	<Text style={styles.textLogin}>Masuk</Text>
 						</LinearGradient>
 					</TouchableOpacity>
-					<TouchableOpacity 
-						style={styles.forgotPassword}
-						onPress={this.onPressForgotPassword}
-					>
-					  <Text style={styles.textForgotPassword}>Forgot Password?</Text>
-					</TouchableOpacity>
-					<TouchableOpacity
-					  onPress={this.onPressDaftar}
-						style={styles.daftar}
-					>
-					  <LinearGradient colors={[ '#0d1a26', '#0d1a26']} style={styles.buttonDaftar}>
-			      	    <Text style={styles.textDaftar}>Buat Akun</Text>
-					  </LinearGradient>
-					</TouchableOpacity>
 				</View>
 			</LinearGradient>
 		)
@@ -76,51 +50,28 @@ const styles = StyleSheet.create({
     alignItems: 'center',
 	},
 	textTitle: {
-	    marginTop: 80,
-	    marginBottom: 10,
-	    color: 'white',
-	    fontSize: 30
+	  marginTop: 80,
+	  marginBottom: 10,
+	  color: 'white',
+	  fontSize: 30
 	},
 	textInput: {
-        width: 250,
-        height: 70,
-        marginVertical: 5,
-        paddingHorizontal: 20,
-        fontSize: 16,
-        borderBottomWidth: 1,
-        borderBottomColor: '#e6e6e1',
+    width: 250,
+    height: 70,
+    marginVertical: 5,
+    paddingHorizontal: 20,
+    fontSize: 16,
+    borderBottomWidth: 1,
+    borderBottomColor: '#e6e6e1',
 	},
 	buttonLogin: {
-        width: 250,
-        height: 40,
-        alignItems: 'center',
-        justifyContent: 'center',
-        marginTop: 25,
-        borderRadius: 3,
-	},
-	daftar: {
-	      alignItems: 'center',
-        justifyContent: 'center',
-	},
-	buttonDaftar: {
-        width: 150,
-        height: 40,
-        alignItems: 'center',
-        justifyContent: 'center',
-        marginTop: 25,
-        borderRadius: 3,
-	},
-	textDaftar: {
-		color: 'white'
-	},
-	forgotPassword: {
-		marginTop: 15,
-		alignItems: 'center',
+    width: 250,
+    height: 40,
+    alignItems: 'center',
     justifyContent: 'center',
+    marginTop: 25,
+    borderRadius: 3,
 	},
-	textForgotPassword: {
-		color: '#a6a6a6'
-	}
 })
 
 export default Login

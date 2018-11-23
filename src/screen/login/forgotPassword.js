@@ -7,11 +7,11 @@ import LinearGradient from 'react-native-linear-gradient';
 export default class ForgotPassword extends Component{
 	static navigatorStyle = {
 		tabBarHidden: true,
-		navBarBackgroundColor:'#00001a',
+		navBarHidden: true
 	}
 	render(){
 		return(
-			<LinearGradient colors={[ '#000000', '#00001a']} style={styles.container}>
+			<LinearGradient colors={[ '#4d0000', '#ff3300']} style={styles.container}>
 			  <View style={styles.textTitle}>
 			    <Text style={styles.textTitle}>Forgot Your Password</Text>
 			  </View>

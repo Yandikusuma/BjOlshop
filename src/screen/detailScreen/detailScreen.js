@@ -4,47 +4,52 @@ import LinearGradient from 'react-native-linear-gradient';
 
 
 export default class DetailScreen extends Component{
-	static navigatorStyle = { tabBarHidden: true }
+	static navigatorStyle = { 
+		tabBarHidden: true,
+	}
 	render(){
 		return(
 			<ScrollView>
-			  <View style={StyleSheet.container}>
+			  <View style={styles.container}>
 			  	<View style={styles.viewImage}>
 			  		<Image 
 			  			style={styles.image}
-			  			source={require('../../../image/pakaian-pria.jpg')}
+			  			source={require('../../../image/jam.jpeg')}
 			  		/>
-			  	</View>
-			  	<View style={{backgroundColor: 'white'}}>
-			  		<View style={styles.viewText}>
-			  			<Text style={styles.textM}>Merek</Text>
-			  		  <Text style={styles.textMerek}>: Kemeja</Text>						
-			  		</View>
-			  		<View style={styles.viewText}>
-			  			<Text style={styles.textM}>Harga</Text>
-			  		  <Text style={styles.textM1}>: 250.00</Text>						
-			  		</View>
-			  		<View style={styles.viewText}>
-			  			<Text style={styles.textM}>Stock</Text>
-			  			<Text style={styles.textM1}> : Terakhir</Text>						
-			  		</View>
-			  		<View style={styles.viewText}>
-			  			<Text style={styles.textM}>Penjual</Text>
-			  		  <Text style={styles.textPenjual}>: BjOlshop</Text>
-			  		</View>
-			  		<View style={styles.viewText}>
-			  			<Text style={styles.textM}>Lokasi</Text>
-			  			<Text style={styles.textLokasi}>: Sungai Bahar 11, kabupaten Muaro Jambi</Text>
-			  		</View>
-			  	  <View style={styles.viewButton}>
-			  	  	<TouchableOpacity>
-			  			  <LinearGradient colors={[ 'blue', '#0088cc']} style={styles.button}>
-			  				   <Text style={styles.textButton}>Pesan</Text>
-			  				</LinearGradient>
-			  	  	</TouchableOpacity>
-			  		</View>
-			  	</View>
-			  </View>
+					</View>
+					<ScrollView>
+					  <View style={styles.textDescription}>
+					     <View style={styles.viewText}>
+					       <Text style={styles.text}>Nama Toko</Text>
+					  	 </View>
+					     <View style={styles.viewText}>
+					       <Text>Merek</Text>
+					  	 </View>
+					  	 <View style={styles.viewText}>
+					  	   <Text>Stock</Text>
+					  	 </View>
+					  	 <View style={styles.viewText}>
+					  	   <Text>Alamat Toko</Text>
+					  	 </View>
+					  	 <View style={styles.viewText}>
+					  	   <Text>Quality</Text>
+							 </View>
+							 <View style={styles.viewText}>
+					  	   <Text>Description</Text>
+					  	 </View>
+					  </View>
+					</ScrollView>
+					<View style={styles.viewButton}>
+					  <View style={styles.boxButton}>
+					  	  <Text style={styles.textHarga}>Harga</Text>
+					  </View>
+					  <View>
+					  	<TouchableOpacity style={styles.boxButtonPesan}>
+					  	  <Text style={styles.textPesan}>Pesan</Text>
+					  	</TouchableOpacity>
+					  </View>
+				  </View>
+				</View>
 			</ScrollView>
 		)
 	}
@@ -54,67 +59,54 @@ export default class DetailScreen extends Component{
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		backgroundColor: 'white'
+		backgroundColor: '#cccccc'
 	},
 	viewImage: {
 		alignItems: 'center',
-		backgroundColor: 'white'
+		backgroundColor: 'white',
+		marginHorizontal: 10,		
+		marginVertical: 20
 	},
 	image: {
 		height: 300,
 		width: 250
 	},
+	textDescription: {
+		backgroundColor: 'white',
+		marginVertical: 10,
+		paddingBottom: 20
+	},
 	viewText: {
-		marginTop: 5,
-		flexDirection: 'row'
+		paddingVertical: 10,
+		borderBottomWidth: 1,
+		borderColor: '#cccccc',
+		paddingHorizontal: 20,
 	},
-	textM: {
-		fontSize: 20,
-		color: 'red',
-		fontFamily: 'Avenir-Medium'
-	},
-	textMerek: {
-		fontSize: 20,
-		color: 'blue',
-		marginLeft: 11,
-		paddingTop: 5
-	},
-	textM1: {
-		fontSize: 20,
-		color: 'blue',
-		marginLeft: 15,
-		paddingTop: 5
-	},
-	textLokasi: {
-		fontSize: 20,
-		color: 'blue',
-		marginRight: 80,
-		marginLeft: 15,
-		paddingTop: 5		
-		
-	},
-	textPenjual: {
-		fontSize: 20,
-		color: 'blue',
-		marginLeft: 5,
-		paddingTop: 5
-		
+	text: {
+		fontSize: 18,
 	},
 	viewButton: {
-		marginTop: 30,
-		marginBottom: 20,
-		alignItems: 'center',
+		backgroundColor: '#fff',
+		flexDirection: 'row',
+		justifyContent: 'space-between',
+		paddingHorizontal: 30,
+		paddingVertical: 20
 	},
-	button: {
-		width: 250,
-    height: 50,
-    alignItems: 'center',
-		justifyContent: 'center',
-		borderRadius: 10	
+	boxButton: {
+		backgroundColor: '#b3b3b3'
 	},
-	textButton: {
-		color: 'white',
-		fontSize: 18
+	textHarga: {
+		paddingHorizontal: 50,
+		paddingVertical: 20,
+		color: 'red'
+	},
+	boxButtonPesan: {
+		backgroundColor: 'red'
+	},
+	textPesan: {
+		paddingHorizontal: 50,
+		paddingVertical: 20,
+		color: '#fff'
 	}
 
 })

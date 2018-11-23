@@ -18,7 +18,7 @@ class HomeScreen extends Component{
 	render(){
 		return(
 				<View style={styles.headerHome}>
-				  <TabBar navigator={this.props.navigator}/>
+				  <TabBar navigator={this.props.navigator} />
 				  <ScrollView>
 						<Content navigator={this.props.navigator}/>
 					</ScrollView>
@@ -31,7 +31,7 @@ class HomeScreen extends Component{
 const styles = StyleSheet.create({
 	headerHome: {	
 		flex: 1,
-    backgroundColor: 'rgba(242, 242, 242, 0.8)',
+    backgroundColor: '#cccccc',
   },
 })
 

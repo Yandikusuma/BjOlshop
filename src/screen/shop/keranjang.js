@@ -36,7 +36,7 @@ class Keranjang extends Component{
 						</View>
 						<View style={styles.textIcon}>
 				  	  <View style={styles.text}>
-						  	<Text>Merek: Sepatu Nike Versi Terbaru,Elegan,  </Text>
+						  	<Text>Merek: Sepatu Nike hahhahahahah  </Text>
 						  	<Text>Harga: </Text>						
 						  </View>
 						  <View style={styles.delate}>
@@ -61,15 +61,15 @@ const styles = StyleSheet.create({
 	},
 	iconGambar: {
 		backgroundColor: 'red',
-		width: 102,
-		borderRightWidth: 2,
+		width: 101,
+		borderRightWidth: 1,
 		borderColor: 'grey'
 		
 	},
 	textIcon: {
 		flex: 1,
 		justifyContent: 'space-between',
-		flexDirection: 'row'
+		flexDirection: 'row',
 	},
 	imageContent: {
 		width: 100,
@@ -79,13 +79,13 @@ const styles = StyleSheet.create({
 		flexDirection: 'column',
 		justifyContent: 'space-between',		
 		margin: 10,
+		width: 150
 	},
 	delate: {
 		backgroundColor: 'grey',
 		alignItems: 'center',
 		justifyContent: 'center',
-		width: 80,
-		borderRadius: 5
+		width: 60,
 	}
 })
 

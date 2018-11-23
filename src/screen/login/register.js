@@ -6,7 +6,7 @@ import LinearGradient from 'react-native-linear-gradient';
 
 
 class Register extends Component{
-	static navigatorStyle = { navBarHidden: false, tabBarHidden: true}
+	static navigatorStyle = { navBarHidden: true, tabBarHidden: true}
 	render(){
 		return(
 			<LinearGradient colors={[ '#4d0000', '#ff3300']} style={styles.container}>
