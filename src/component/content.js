@@ -1,6 +1,15 @@
 import React, { Component } from 'react';
-import { View, Text, TextInput, StyleSheet, Image, TouchableOpacity } from 'react-native';
-import LinearGradient from 'react-native-linear-gradient'
+import { 
+	View, 
+	Text, 
+	TextInput, 
+	StyleSheet, 
+	Image, 
+	TouchableOpacity, 
+	ImageBackground, 
+	ScrollView} from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
+import ContenDiscount from './contenDiscount';
 
 class Content extends Component{
 	constructor(){
@@ -41,97 +50,82 @@ class Content extends Component{
 	}
 	render(){
 		return(
-			<LinearGradient  colors={[ '#4d0000', '#ff3300']} style={styles.contentView}>
-			  <View>
-			   <Text style={styles.categori}>Pakaian Pria</Text>
-			    <View style={styles.contentPria}>
-			  	  <View style={styles.imageShirt}>
-							<TouchableOpacity onPress={this.onDetailPria}>
-			  	  	  <Image
-			  	  	    style={styles.imageBaju}
-			  	  	    source={require('../../image/mens-shirt.png')}
-			  	  	  />
-			  	  	  <View style={styles.textBaju}>
-			  	  	    <Text style={styles.text}>Clothes</Text>
-			  	  	  </View>
-			  	  	</TouchableOpacity>
-			  	  </View>
-			  	  <View style={styles.imagePants}>
-							<TouchableOpacity
-							  onPress={this.onDetailPantsPria}
-							>
-			  	  	  <Image 
-			  	  	   style={styles.imageCelana}
-								 source={require('../../image/jeans_pria.png')}
-							  />
-			  			  <View style={styles.textCelana}>
-			  				 <Text style={styles.text}>Pants</Text>
-			  			  </View>
-			  			</TouchableOpacity>
-			  	  </View>
-			    </View>
+			<View style={styles.contentView}>
+			  <ContenDiscount />
+				<View style={styles.viewCategori}>
+				  <Text style={styles.textCategori}>Pick the Categori</Text>
 				</View>
-				<View style={{marginTop: 20}}>
-			   <Text style={styles.categori}>Pakaian Wanita</Text>
-			    <View style={styles.contentPria}>
-			  	  <View style={styles.imageShirt}>
-							<TouchableOpacity
-							  onPress={this.onDetailWanita}
-							>
-			  	  	  <Image
-			  	  	    style={styles.imageBaju}
-			  	  	    source={require('../../image/womans-collared-tshirt.png')}
-			  	  	  />
-			  	  	  <View style={styles.textBaju}>
-			  	  	    <Text style={styles.text}>Clothes</Text>
-			  	  	  </View>
-			  	  	</TouchableOpacity>
-			  	  </View>
-			  	  <View style={styles.imagePants}>
-							<TouchableOpacity
-							  onPress={this.onDetailPantsWanita}
-							>
-			  	  	 <Image 
-			  	  	   style={styles.imageCelana}
-			  	  	   source={require('../../image/womans-jeans.png')}/>
-			  			  <View style={styles.textCelana}>
-			  				 <Text style={styles.text}>Pants</Text>
-			  			  </View>
-			  			</TouchableOpacity>
-			  	  </View>
-			    </View>
-				</View>
-				<View style={{marginTop: 20}}>
-			   <Text style={styles.categori}>Accessories</Text>
-			    <View style={styles.contentPria}>
-			  	  <View style={styles.imageShirt}>
-							<TouchableOpacity
-							  onPress={this.onDetailSepatu}
-							>
-			  	  	  <Image
-			  	  	    style={styles.imageSepatu}
-			  	  	    source={require('../../image/shoes1.png')}
-			  	  	  />
-			  	  	  <View style={styles.textSepatu}>
-			  	  	    <Text style={styles.text}>Shoes</Text>
-			  	  	  </View>
-			  	  	</TouchableOpacity>
-			  	  </View>
-			  	  <View style={styles.imagePants}>
-							<TouchableOpacity
-							  onPress={this.onDetailJam}
-							>
-			  	  	 <Image 
-			  	  	   style={styles.imageJam}
-			  	  	   source={require('../../image/Watch-icon.png')}/>
-			  			  <View style={styles.textCelana}>
-			  				 <Text style={styles.text}>Watch</Text>
-			  			  </View>
-			  			</TouchableOpacity>
-			  	  </View>
-			    </View>
-				</View>
-			</LinearGradient>
+				<ScrollView horizontal={true}>
+					<View style={styles.viewImage}>
+						<TouchableOpacity
+						  onPress={this.onDetailPria}
+						>
+				  	  <View style={styles.contentImage}>
+				  	  	<Image 
+				  	  		source={require('../../image/baju-Pria.jpg')}
+				  	  		style={styles.image}
+				  	  	/>
+				  	  	<Text>Baju Pria</Text>
+						  </View>
+						</TouchableOpacity>
+						<TouchableOpacity
+						  onPress={this.onDetailPantsPria}
+						>
+				  	  <View style={styles.contentImage}>
+				  	  	<Image 
+				  	  		source={require('../../image/celana-pria.jpg')}
+				  	  		style={styles.image}							
+				  	  	/>
+				  	  	<Text>Celana Pria</Text>						
+						  </View>
+						</TouchableOpacity>
+						<TouchableOpacity
+						  onPress={this.onDetailWanita}
+						>
+				  	  <View style={styles.contentImage}>
+				  	  	<Image 
+				  	  		source={require('../../image/baju-wanita2.jpg')}
+				  	  		style={styles.image}							
+				  	  	/>
+				  	  	<Text>Baju Wanita</Text>						
+						  </View>
+						</TouchableOpacity>
+						<TouchableOpacity
+						  onPress={this.onDetailPantsWanita}
+						>
+				  	  <View style={styles.contentImage}>
+				  	  	<Image 
+				  	  		source={require('../../image/celana-wanita.jpg')}
+				  	  		style={styles.image}							
+				  	  	/>
+				  	  	<Text>Celana Wanita</Text>						
+						  </View>
+						</TouchableOpacity>
+						<TouchableOpacity
+						  onPress={this.onDetailJam}
+						>
+						  <View style={styles.contentImage}>
+				  	  	<Image 
+				  	  		source={require('../../image/jam.jpeg')}
+				  	  		style={styles.image}							
+				  	  	/>
+				  	  	<Text>Jam Tangan</Text>						
+						  </View>
+						</TouchableOpacity>
+						<TouchableOpacity
+						  onPress={this.onDetailSepatu}
+						>
+						  <View style={styles.contentImage}>
+				  	  	<Image 
+				  	  		source={require('../../image/sepatu2.jpg')}
+				  	  		style={styles.image}							
+				  	  	/>
+				  	  	<Text>Sepatu</Text>						
+						  </View>
+						</TouchableOpacity>
+				  </View>
+				</ScrollView>
+			</View>
 		)
 	}
 }
@@ -139,69 +133,31 @@ class Content extends Component{
 
 const styles = StyleSheet.create({
 	contentView:{
-		padding        : 10,
-	},
-	imageShirt:{
 		flex: 1,
-		padding     : 20,
-		borderColor : '#000f1a',
-		borderRadius: 5,
-		backgroundColor: 'yellow',
-		alignItems: 'center',		
-		marginRight: 5,
-		marginLeft: 5,
-		
+		backgroundColor: '#cccccc'
 	},
-	categori: {
-		color: 'white',
-		fontSize: 20
+	viewCategori: {
+		marginTop: 20,
+		paddingLeft: 30,
 	},
-	imagePants: {
-		flex: 1,
-		padding     : 20,
-		borderColor : '#000f1a',
-		backgroundColor: 'yellow',		
-		borderRadius: 5,
-		alignItems: 'center',
-		marginRight: 5,
-		marginLeft: 5,
+	textCategori: {
+		fontSize: 16,
+		color: '#000',
+		fontWeight: 'bold'
 	},
-	contentPria:{
-		flexDirection : 'row',
-		justifyContent: 'space-between',
+	viewImage: {
+		backgroundColor: "#fff",
+		flexDirection: 'row',
+		paddingHorizontal: 20,
 	},
-	imageBaju:{
-		marginTop: 5,
-		width    : 180,
-		height   : 160,
-	},
-	imageCelana:{
-		padding: 20,
-		width  : 180,
-		height : 160
-	},
-	imageSepatu: {
-		width: 180,
-		height: 160
-	},
-	imageJam: {
-		width: 180,
+	image: {
+		width: 120,
 		height: 150
 	},
-	text: {
-		fontSize: 25,
-		color: 'red'
-	},
-	textBaju:{
+	contentImage: {
 		alignItems: 'center',
-		marginTop: 10			
-	},
-	textCelana:{
-		alignItems: 'center',
-		marginTop: 15
-	},
-	textSepatu:{
-		alignItems: 'center',
+		paddingVertical: 20,
+		marginHorizontal:10
 	}
 })
 
