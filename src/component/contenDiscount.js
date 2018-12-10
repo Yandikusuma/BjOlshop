@@ -2,17 +2,34 @@ import React, { Component } from 'react';
 import { View, StyleSheet, Image, Text, ScrollView, TouchableOpacity } from 'react-native';
 
 class ContenDiscount extends Component{
+	onPressPesan = () => {
+		this.props.navigator.push({
+			screen: 'ContenDiscountMore',
+		})
+	}
+	onPressDetail = () => {
+		this.props.navigator.push({
+			screen: 'DetailScreen',
+			title: 'Detail Product'
+		});
+
+	}
 	render(){
 		return(
 			<ScrollView>
 			  <View style={styles.container}>
 			    <View style={styles.viewCategori}>
-			  	  <Text style={styles.textCategori}>Recommended By Discount</Text>
+						<Text style={styles.textCategori}>Recommended By Discount</Text>
+						<TouchableOpacity onPress={this.onPressPesan}>
+						  <Text style={{paddingRight: 10}}>More</Text>
+						</TouchableOpacity>
 			  	</View>
 			  	<View style={styles.viewDiscountImage}>
 						<View style={styles.viewDiscount}>
 						  <View style={styles.viewImage}>
-						    <TouchableOpacity>
+								<TouchableOpacity
+								  onPress={this.onPressDetail}
+								>
 			  		    	<Image 
 			  		    	  style={styles.image}
 			  		    	  source={require('../../image/sepatu.jpeg')}
@@ -25,7 +42,9 @@ class ContenDiscount extends Component{
 								</TouchableOpacity>
 							</View>
 							<View style={styles.viewImage}>
-							  <TouchableOpacity>
+								<TouchableOpacity
+								  onPress={this.onPressDetail}
+								>
 			  		  	  <Image 
 			  		  	    style={styles.image}						
 			  		  	    source={require('../../image/baju-Pria.jpg')}
@@ -38,7 +57,9 @@ class ContenDiscount extends Component{
 								</TouchableOpacity>
 			  			</View>
 			  		</View>
-						<TouchableOpacity>
+						<TouchableOpacity
+						  onPress={this.onPressDetail}
+						>
 						  <View style={styles.discountSide}>
 			  			  <Image 
 			  			    style={styles.imageSide}												
@@ -77,8 +98,10 @@ const styles = StyleSheet.create({
 		justifyContent: 'center'
 	},
 	viewCategori: {
+		flexDirection: 'row',
 		marginTop: 20,
 		paddingLeft: 30,
+		justifyContent: 'space-between'
 	},
 	textCategori: {
 		fontSize: 16,

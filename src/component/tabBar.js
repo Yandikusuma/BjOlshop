@@ -18,7 +18,7 @@ class TabBar extends Component{
 	}
 	render(){
 		return(
-			<LinearGradient colors={[ '#000', '#000']} style={styles.viewSearch}>
+			<LinearGradient colors={[ '#0059b3', '#0059b3']} style={styles.viewSearch}>
 			  <View style={styles.viewInput}>
 				  <TextInput
 				    placeholder="Go Shopping ..."
@@ -32,6 +32,9 @@ class TabBar extends Component{
 				  </TouchableOpacity>
 			  </View>
 				<View style={styles.buttonIconS}>
+					<View style={styles.textMarket}>
+					  <Text style={{color: '#fff'}}>0</Text>
+					</View>
 				  <TouchableOpacity 
 				       onPress={this.onPressMarket}
 			    >
@@ -47,8 +50,6 @@ const styles = StyleSheet.create({
 		paddingVertical: 10,
 		flexDirection: 'row',
 		justifyContent: 'space-between',
-
-		
 	},
 	viewInput:{
 		flex: 1,
@@ -69,6 +70,18 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 		marginRight: 10
 	},
+	textMarket: {
+		position: 'absolute',
+		height: 30,
+		width: 30,
+		borderRadius: 15,
+		backgroundColor: '#666666',
+		right: 15,
+		bottom: 15,
+		alignItems: 'center',
+		justifyContent: 'center',
+		zIndex: 2000
+	}
 	
 	
 })

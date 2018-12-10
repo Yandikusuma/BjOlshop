@@ -7,10 +7,11 @@ export default class DetailContent extends Component{
 	state = {
 		isVisible: false
 	}
-	onToggle = () => {
-		this.setState({
-			isVisible: !this.state.isVisible
-		});
+	onPressDetail = () => {
+		this.props.navigator.push({
+			screen: 'DetailScreen',
+			title: 'Detail Product'
+		})
 	}
 	render(){
 		return(
@@ -18,7 +19,7 @@ export default class DetailContent extends Component{
 				<View style={styles.container}>
 					 <View style={styles.containerContent}>
 						 <TouchableOpacity
-						   onPress={this.onToggle}
+						   onPress={this.onPressDetail}
 						 >
 						   <View style={styles.imageView}>
 								 <Image 
@@ -35,7 +36,7 @@ export default class DetailContent extends Component{
 					 </View>
 					 <View style={styles.containerContent1}>
 						 <TouchableOpacity
-						   onPress={this.onToggle}
+						   onPress={this.onPressDetail}
 						 >
 							 <View style={styles.imageView}>
 								 <Image 
@@ -50,12 +51,6 @@ export default class DetailContent extends Component{
 						 </TouchableOpacity>
 					 </View>
 				</View>
-				<ModalDetail 
-					transparent={true}
-					navigator={this.props.navigator}
-				  isVisible={this.state.isVisible}
-				  onToggle={this.onToggle}
-				/>
 			</View>
 		)
 	}

@@ -3,12 +3,20 @@ import { View, Text, TouchableOpacity, Image, StyleSheet } from 'react-native';
 
 
 export default class ContentJam extends Component{
+	onPressDetail = () => {
+		this.props.navigator.push({
+			screen: 'DetailScreen',
+			title: 'Detail Product'
+		})
+	}
 	render(){
 		return(
 			<View>
 			  <View style={styles.container}>
 			  	<View style={styles.containerContent}>
-			  		<TouchableOpacity>
+						<TouchableOpacity
+						  onPress={this.onPressDetail}
+						>
 			  			<View style={styles.imageView}>
 			  				<Image 
 			  					style={styles.imageContent}
@@ -22,7 +30,9 @@ export default class ContentJam extends Component{
 			  		</TouchableOpacity>
 			  	</View>
 			  	<View style={styles.containerContent1}>
-			  		<TouchableOpacity>
+						<TouchableOpacity
+						  onPress={this.onPressDetail}
+						>
 			  			<View style={styles.imageView}>
 			  				<Image 
 			  					style={styles.imageContent}

@@ -12,7 +12,7 @@ export default class DetailJam extends Component{
 		return(
 			<View>
 			 <TabBar />
-			 <ContentJam />
+			 <ContentJam navigator={this.props.navigator}/>
 			</View>
 		)
 	}

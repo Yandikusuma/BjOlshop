@@ -62,9 +62,8 @@ class ProfileLogged extends Component{
 			  	<View style={styles.viewJual}>
 			  		<TouchableOpacity
 			  			style={styles.buttonSell}
-			  			onPress={this.onPressAddProduct}
 			  		>
-			  			<Icon name="envelope-open" size={25} color="red" />
+			  			<Icon name="home" size={25} color="red" />
 			  			<View style={styles.viewIcon}>
 			  			    <Text style={styles.text}>MyStore</Text>
 			  				  <Icon name="angle-right" size={30} color="grey" />

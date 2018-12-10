@@ -7,6 +7,13 @@ export default class DetailScreen extends Component{
 	static navigatorStyle = { 
 		tabBarHidden: true,
 	}
+
+	onPressPesan = () => {
+		this.props.navigator.push({
+			screen: 'Pesan',
+			title: 'Confirm Order'
+		})
+	}
 	render(){
 		return(
 			<ScrollView>
@@ -27,6 +34,9 @@ export default class DetailScreen extends Component{
 					  	 </View>
 					  	 <View style={styles.viewText}>
 					  	   <Text>Stock</Text>
+							 </View>
+							 <View style={styles.viewText}>
+					  	   <Text>Discount</Text>
 					  	 </View>
 					  	 <View style={styles.viewText}>
 					  	   <Text>Alamat Toko</Text>
@@ -44,8 +54,11 @@ export default class DetailScreen extends Component{
 					  	  <Text style={styles.textHarga}>Harga</Text>
 					  </View>
 					  <View>
-					  	<TouchableOpacity style={styles.boxButtonPesan}>
-					  	  <Text style={styles.textPesan}>Pesan</Text>
+							<TouchableOpacity 
+								style={styles.boxButtonPesan}
+								onPress={this.onPressPesan}
+							>
+					  	  <Text style={styles.textPesan}>Add to Cart</Text>
 					  	</TouchableOpacity>
 					  </View>
 				  </View>

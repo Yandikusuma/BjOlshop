@@ -19,6 +19,9 @@ import MyAccount from '../login/myAccount'
 import Register from '../login/register';
 import ForgotPassword from '../login/forgotPassword';
 import About from '../profile/about';
+import Pesan from '../shop/pesan';
+import Payment from '../payment/payment';
+import ContenDiscountMore from '../../component/contenDiscountMore';
 
 export function registerScreen(){
 	
@@ -36,10 +39,13 @@ export function registerScreen(){
 	Navigation.registerComponent('Profile', () => Profile)
 	Navigation.registerComponent('MyAccount', () => MyAccount)	
 	Navigation.registerComponent('Login', () => Login)
-	Navigation.registerComponent('About', () => About)	
+	Navigation.registerComponent('About', () => About)
+	Navigation.registerComponent('Pesan', () => Pesan)		
 	Navigation.registerComponent('IntroLoggin', () => IntroLoggin)	
 	Navigation.registerComponent('Register', () => Register)
 	Navigation.registerComponent('ForgotPassword', () => ForgotPassword)
+	Navigation.registerComponent('Payment', () => Payment)
+	Navigation.registerComponent('ContenDiscountMore', () => ContenDiscountMore)			
 	
 	
 	

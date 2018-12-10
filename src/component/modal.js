@@ -8,6 +8,7 @@ const ModalDetail = ({ onToggle, isVisible, navigator }) => {
 		onToggle()
 		navigator.push({
 			screen: 'DetailScreen',
+			title: 'Detail Product'
 		});
 
 	}
@@ -72,7 +73,7 @@ const styles = StyleSheet.create({
 		alignItems: 'center'
 	},
 	viewModal: {
-		backgroundColor: 'blue',
+		backgroundColor: '#0059b3',
 		flexDirection: 'column',
 	},
 	imageContentModal: {

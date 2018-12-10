@@ -39,6 +39,14 @@ class AddProduct extends Component{
 				  	  onChangeText={(text) => this.setState({text})}
 				  	  style={styles.textInput}
 				  	/>
+					</View>
+					<View>
+				  	<TextInput 
+				  	  placeholder="Discount"
+				  	  placeholderTextColor="#000"
+				  	  onChangeText={(text) => this.setState({text})}
+				  	  style={styles.textInput}
+				  	/>
 				  </View>
 				  <View>
 				    <TextInput

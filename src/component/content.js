@@ -51,7 +51,7 @@ class Content extends Component{
 	render(){
 		return(
 			<View style={styles.contentView}>
-			  <ContenDiscount />
+			  <ContenDiscount navigator={this.props.navigator}/>
 				<View style={styles.viewCategori}>
 				  <Text style={styles.textCategori}>Pick the Categori</Text>
 				</View>

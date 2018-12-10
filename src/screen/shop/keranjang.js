@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Image, ScrollView } from 'react-native';
 import TabBarFooter from '../../component/tabBarFooter';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
@@ -14,39 +14,40 @@ class Keranjang extends Component{
 		this.state = { 
 		}
 	}
-	onPressDetail = () => {
+	onPressPesan = () => {
 		this.props.navigator.push({
-			screen: 'DetailScreen',
-		});
-
+			screen: 'Pesan',
+			title: 'Confirm Order'
+		})
 	}
-
 	render(){
 		return(
 			<View style={{flex: 1, backgroundColor: '#bfbfbf'}}>
-				<TouchableOpacity
-				  onPress={this.onPressDetail}
-				>
-				  <View style={styles.container}>
-						<View style={styles.iconGambar}>
-							<Image 
-							  style={styles.imageContent}
-							  source={require('../../../image/sepatu.jpeg')}
-							/>
-						</View>
-						<View style={styles.textIcon}>
-				  	  <View style={styles.text}>
-						  	<Text>Merek: Sepatu Nike hahhahahahah  </Text>
-						  	<Text>Harga: </Text>						
-						  </View>
-						  <View style={styles.delate}>
-						    <TouchableOpacity>
-						  	   <Icon name="trash" size={30} style={{color: 'white'}}/>
-						    </TouchableOpacity>
-						  </View>
-						</View>
-					</View>
-				</TouchableOpacity>
+			  <ScrollView>
+				  <TouchableOpacity
+				    onPress={this.onPressPesan}
+				  >
+				    <View style={styles.container}>
+				  		<View style={styles.iconGambar}>
+				  			<Image 
+				  			  style={styles.imageContent}
+				  			  source={require('../../../image/sepatu.jpeg')}
+				  			/>
+				  		</View>
+				  		<View style={styles.textIcon}>
+				    	  <View style={styles.text}>
+				  		  	<Text>Merek: Sepatu Nike hahhahahahah  </Text>
+				  		  	<Text>Harga: </Text>						
+				  		  </View>
+				  		  <View style={styles.delate}>
+				  		    <TouchableOpacity>
+				  		  	   <Icon name="trash" size={30} style={{color: 'white'}}/>
+				  		    </TouchableOpacity>
+				  		  </View>
+				  		</View>
+				  	</View>
+				  </TouchableOpacity>
+				</ScrollView>
 			</View>
 		)
 	}
