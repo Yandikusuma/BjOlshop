@@ -11,7 +11,7 @@ export default class DetailJam extends Component{
 	render(){
 		return(
 			<View>
-			 <TabBar />
+			 <TabBar navigator={this.props.navigator}/>
 			 <ContentJam navigator={this.props.navigator}/>
 			</View>
 		)

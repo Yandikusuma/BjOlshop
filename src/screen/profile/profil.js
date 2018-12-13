@@ -24,8 +24,8 @@ class Profile extends Component{
 						source={require('../../../image/bjOlshop.jpg')}
 					/>
 				</View>
-				<ProfileLoggin navigator={this.props.navigator}/>
-				{/*<ProfileLogged navigator={this.props.navigator} />*/}
+		   {/*<ProfileLoggin navigator={this.props.navigator}/>*/}
+				<ProfileLogged navigator={this.props.navigator} />
 			</View>
 		)
 	}

@@ -12,7 +12,7 @@ export default class DetailSepatu extends Component{
 	render(){
 		return(
 			<View>
-			  <TabBar />
+			  <TabBar navigator={this.props.navigator}/>
 			  <ContentSepatu navigator={this.props.navigator}/>
 			</View>
 		)

@@ -32,12 +32,12 @@ class TabBar extends Component{
 				  </TouchableOpacity>
 			  </View>
 				<View style={styles.buttonIconS}>
-					<View style={styles.textMarket}>
-					  <Text style={{color: '#fff'}}>0</Text>
-					</View>
 				  <TouchableOpacity 
 				       onPress={this.onPressMarket}
-			    >
+					>
+					  <View style={styles.textMarket}>
+					    <Text style={{color: '#fff'}}>0</Text>
+					  </View>
 			    	<Icon name="shopping-basket" size={30} style={{color:'#fff'}}/>
 				  </TouchableOpacity>
 				</View>
@@ -76,8 +76,8 @@ const styles = StyleSheet.create({
 		width: 30,
 		borderRadius: 15,
 		backgroundColor: '#666666',
-		right: 15,
-		bottom: 15,
+		right: 18,
+		bottom: 5,
 		alignItems: 'center',
 		justifyContent: 'center',
 		zIndex: 2000

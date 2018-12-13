@@ -84,7 +84,7 @@ class Content extends Component{
 						>
 				  	  <View style={styles.contentImage}>
 				  	  	<Image 
-				  	  		source={require('../../image/baju-wanita2.jpg')}
+				  	  		source={require('../../image/baju-wanita3.jpg')}
 				  	  		style={styles.image}							
 				  	  	/>
 				  	  	<Text>Baju Wanita</Text>						
@@ -95,7 +95,7 @@ class Content extends Component{
 						>
 				  	  <View style={styles.contentImage}>
 				  	  	<Image 
-				  	  		source={require('../../image/celana-wanita.jpg')}
+				  	  		source={require('../../image/celana_wanita.jpg')}
 				  	  		style={styles.image}							
 				  	  	/>
 				  	  	<Text>Celana Wanita</Text>						

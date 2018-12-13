@@ -1,11 +1,13 @@
 import React, { Component, version } from 'react';
 import { View, Text, StyleSheet, Image, ScrollView, TouchableOpacity } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
+import TabBarDetail from '../../component/tabBarDetail';
 
 
 export default class DetailScreen extends Component{
 	static navigatorStyle = { 
 		tabBarHidden: true,
+		navBarHidden: true
 	}
 
 	onPressPesan = () => {
@@ -16,54 +18,56 @@ export default class DetailScreen extends Component{
 	}
 	render(){
 		return(
-			<ScrollView>
-			  <View style={styles.container}>
-			  	<View style={styles.viewImage}>
-			  		<Image 
-			  			style={styles.image}
-			  			source={require('../../../image/jam.jpeg')}
-			  		/>
-					</View>
-					<ScrollView>
-					  <View style={styles.textDescription}>
-					     <View style={styles.viewText}>
-					       <Text style={styles.text}>Nama Toko</Text>
-					  	 </View>
-					     <View style={styles.viewText}>
-					       <Text>Merek</Text>
-					  	 </View>
-					  	 <View style={styles.viewText}>
-					  	   <Text>Stock</Text>
-							 </View>
-							 <View style={styles.viewText}>
-					  	   <Text>Discount</Text>
-					  	 </View>
-					  	 <View style={styles.viewText}>
-					  	   <Text>Alamat Toko</Text>
-					  	 </View>
-					  	 <View style={styles.viewText}>
-					  	   <Text>Quality</Text>
-							 </View>
-							 <View style={styles.viewText}>
-					  	   <Text>Description</Text>
-					  	 </View>
-					  </View>
-					</ScrollView>
-					<View style={styles.viewButton}>
-					  <View style={styles.boxButton}>
-					  	  <Text style={styles.textHarga}>Harga</Text>
-					  </View>
-					  <View>
-							<TouchableOpacity 
-								style={styles.boxButtonPesan}
-								onPress={this.onPressPesan}
-							>
-					  	  <Text style={styles.textPesan}>Add to Cart</Text>
-					  	</TouchableOpacity>
-					  </View>
-				  </View>
-				</View>
-			</ScrollView>
+				<View style={styles.container}>
+				  <TabBarDetail navigator={this.props.navigator}/>
+			    <ScrollView>
+			      <View>
+			      	<View style={styles.viewImage}>
+			      		<Image 
+			      			style={styles.image}
+			      			source={require('../../../image/jam.jpeg')}
+			      		/>
+			    		</View>
+			    		<ScrollView>
+			    		  <View style={styles.textDescription}>
+			    		     <View style={styles.viewText}>
+			    		       <Text style={styles.text}>Nama Toko</Text>
+			    		  	 </View>
+			    		     <View style={styles.viewText}>
+			    		       <Text>Merek</Text>
+			    		  	 </View>
+			    		  	 <View style={styles.viewText}>
+			    		  	   <Text>Stock</Text>
+			    				 </View>
+			    				 <View style={styles.viewText}>
+			    		  	   <Text>Discount</Text>
+			    		  	 </View>
+			    		  	 <View style={styles.viewText}>
+			    		  	   <Text>Alamat Toko</Text>
+			    		  	 </View>
+			    		  	 <View style={styles.viewText}>
+			    		  	   <Text>Quality</Text>
+			    				 </View>
+			    				 <View style={styles.viewText}>
+			    		  	   <Text>Description</Text>
+			    		  	 </View>
+			    		  </View>
+			    		</ScrollView>
+			    		<View style={styles.viewButton}>
+			    		  <View style={styles.boxButton}>
+			    		  	  <Text style={styles.textHarga}>Harga</Text>
+			    		  </View>
+			    		  <View>
+			    				<TouchableOpacity 
+			    					style={styles.boxButtonPesan}
+			    				>
+			    		  	  <Text style={styles.textPesan}>Add to Cart</Text>
+			    		  	</TouchableOpacity>
+			    		  </View>
+			    	  </View>
+			    	</View>
+			    </ScrollView>
+		  	</View>
 		)
 	}
 }

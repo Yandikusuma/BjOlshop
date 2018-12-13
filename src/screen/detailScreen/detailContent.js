@@ -81,6 +81,9 @@ const styles = StyleSheet.create({
 	},
 	text: {
 		backgroundColor: 'red',
-		paddingLeft: 10
+		paddingLeft: 10,
+	},
+	textMerek: {
+		color: '#fff'
 	}
 })

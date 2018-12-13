@@ -13,7 +13,7 @@ class DetailPantsPria extends Component{
 	render(){
 		return(
 			<View>
-			  <TabBar />
+			  <TabBar navigator={this.props.navigator}/>
 			  <DetailContent navigator={this.props.navigator}/>
 			</View>
 		)
