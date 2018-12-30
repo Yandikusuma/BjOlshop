@@ -22,20 +22,24 @@ import About from '../profile/about';
 import Pesan from '../shop/pesan';
 import Payment from '../payment/payment';
 import ContenDiscountMore from '../../component/contenDiscountMore';
+import { Provider } from 'react-redux';
+import store from '../../store/index';
+import React, { Component } from 'react'
+
 
 export function registerScreen(){
 	
 	Navigation.registerComponent('Content', () => Content)
-	Navigation.registerComponent('DetailScreen', () => DetailScreen)	
-	Navigation.registerComponent('DetailShirtPria', () => DetailShirtPria)
-	Navigation.registerComponent('DetailPantsPria', () => DetailPantsPria)	
-	Navigation.registerComponent('DetailShirtWanita', () => DetailShirtWanita)
-	Navigation.registerComponent('DetailPantsWanita', () => DetailPantsWanita)	
-	Navigation.registerComponent('DetailJam', () => DetailJam)
+	Navigation.registerComponent('DetailScreen', () => DetailScreen, store, Provider)	
+	Navigation.registerComponent('DetailShirtPria', () => DetailShirtPria, store, Provider)
+	Navigation.registerComponent('DetailPantsPria', () => DetailPantsPria, store, Provider)	
+	Navigation.registerComponent('DetailShirtWanita', () => DetailShirtWanita, store, Provider)
+	Navigation.registerComponent('DetailPantsWanita', () => DetailPantsWanita, store, Provider)	
+	Navigation.registerComponent('DetailJam', () => DetailJam, store, Provider)
 	Navigation.registerComponent('AddProduct', () => AddProduct)	
-	Navigation.registerComponent('DetailSepatu', () => DetailSepatu)											
-	Navigation.registerComponent('HomeScreen', () => HomeScreen)
-	Navigation.registerComponent('Keranjang', () => Keranjang)
+	Navigation.registerComponent('DetailSepatu', () => DetailSepatu, store, Provider)											
+	Navigation.registerComponent('HomeScreen', () => HomeScreen, store, Provider)
+	Navigation.registerComponent('Keranjang', () => Keranjang, store, Provider)
 	Navigation.registerComponent('Profile', () => Profile)
 	Navigation.registerComponent('MyAccount', () => MyAccount)	
 	Navigation.registerComponent('Login', () => Login)

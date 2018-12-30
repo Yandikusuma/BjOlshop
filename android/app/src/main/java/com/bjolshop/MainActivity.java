@@ -1,5 +1,5 @@
 package com.bjolshop;
-
+	
 import com.reactnativenavigation.controllers.SplashActivity;
 
 // public class MainActivity extends ReactActivity {

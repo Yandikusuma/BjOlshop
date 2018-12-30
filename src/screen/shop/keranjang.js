@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Image, ScrollView } from 'react-native';
-import TabBarFooter from '../../component/tabBarFooter';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import ProductKeranjang from '../../container/ProductKeranjang';
+import {data} from '../../data/Data';
+import {connect} from 'react-redux';
+
 
 
 
@@ -9,47 +11,23 @@ class Keranjang extends Component{
 	static navigatorStyle = {
 		navBarHidden: true
 	}
-	constructor(props){
-		super(props)
-		this.state = { 
-		}
-	}
-	onPressPesan = () => {
-		this.props.navigator.push({
-			screen: 'Pesan',
-			title: 'Confirm Order'
-		})
-	}
 	render(){
 		return(
 			<View style={{flex: 1, backgroundColor: '#bfbfbf'}}>
-			  <ScrollView>
-				  <TouchableOpacity
-				    onPress={this.onPressPesan}
-				  >
-				    <View style={styles.container}>
-				  		<View style={styles.iconGambar}>
-				  			<Image 
-				  			  style={styles.imageContent}
-				  			  source={require('../../../image/sepatu.jpeg')}
-				  			/>
-				  		</View>
-				  		<View style={styles.textIcon}>
-				    	  <View style={styles.text}>
-				  		  	<Text>Merek: Sepatu Nike hahhahahahah  </Text>
-				  		  	<Text>Harga: </Text>						
-				  		  </View>
-				  		  <View style={styles.delate}>
-				  		    <TouchableOpacity>
-				  		  	   <Icon name="trash" size={30} style={{color: 'white'}}/>
-				  		    </TouchableOpacity>
-				  		  </View>
-				  		</View>
-				  	</View>
-				  </TouchableOpacity>
-				</ScrollView>
+			{this.props.cartItem.length > 0 ?
+				<ProductKeranjang product={data} navigator={this.props.navigator}/>
+				:
+				<View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+				  <Text>No List Item</Text>
+				</View>
+			}
 			</View>
 		)
+	}
+}
+const mapStateToProps = (state) => {
+	return{
+		cartItem: state
 	}
 }
 
@@ -90,4 +68,4 @@ const styles = StyleSheet.create({
 	}
 })
 
-export default Keranjang
+export default connect(mapStateToProps)(Keranjang);

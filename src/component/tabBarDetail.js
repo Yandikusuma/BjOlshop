@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import  {connect} from 'react-redux';
 
 
 
-class TabBarDetail extends Component{
-	onPressMarket = () => {
-		this.props.navigator.push({
-			screen: 'Keranjang'
-		})
-	}
-	render(){
-		return(
+onPressMarket = (props) =>{
+	props.navigator.push({
+		screen: 'Keranjang'
+	})
+}
+const TabBarDetail = (props) => (
 			<View style={styles.container}>
 			  <View style={styles.navBar}>
 				  <View style={styles.viewText}>
@@ -22,14 +21,18 @@ class TabBarDetail extends Component{
 				      onPress={this.onPressMarket}
 						>
 						  <View style={styles.textMarket}>
-						    <Text style={{color: '#fff'}}>0</Text>
+						    <Text style={{color: '#fff'}}>{props.cartItem.length}</Text>
 					    </View>
 		          <Icon name="shopping-basket" size={30} style={{color:'#fff'}}/>
 	          </TouchableOpacity>
 				  </View>
 				</View>
 			</View>
-		)
+)
+
+const mapStateToProps = (state) => {
+	return{
+		cartItem: state
 	}
 }
 
@@ -63,4 +66,4 @@ const styles = StyleSheet.create({
 	}
 })
 
-export default TabBarDetail
+export default connect(mapStateToProps)(TabBarDetail)

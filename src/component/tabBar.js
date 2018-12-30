@@ -1,23 +1,17 @@
 import React, { Component }from 'react';
 import { View,StyleSheet, TextInput, TouchableOpacity, Text} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import LinearGradient from 'react-native-linear-gradient'
+import LinearGradient from 'react-native-linear-gradient';
+import {connect} from 'react-redux'
 
 
 
-class TabBar extends Component{
-	constructor(props){
-		super(props),
-		this.state={
-		}
-	}
-	onPressMarket = () =>{
-		this.props.navigator.push({
-			screen: 'Keranjang'
-		})
-	}
-	render(){
-		return(
+onPressMarket = (props) =>{
+	props.navigator.push({
+		screen: 'Keranjang'
+	})
+}
+const TabBar = (props) => (
 			<LinearGradient colors={[ '#0059b3', '#0059b3']} style={styles.viewSearch}>
 			  <View style={styles.viewInput}>
 				  <TextInput
@@ -33,18 +27,23 @@ class TabBar extends Component{
 			  </View>
 				<View style={styles.buttonIconS}>
 				  <TouchableOpacity 
-				       onPress={this.onPressMarket}
+				       onPress={()=>this.onPressMarket(props)}
 					>
 					  <View style={styles.textMarket}>
-					    <Text style={{color: '#fff'}}>0</Text>
+					    <Text style={{color: '#fff'}}>{props.cartItem.length}</Text>
 					  </View>
 			    	<Icon name="shopping-basket" size={30} style={{color:'#fff'}}/>
 				  </TouchableOpacity>
 				</View>
 		  </LinearGradient>
-		)
+)
+
+const mapStateToProps = (state) => {
+	return{
+		cartItem: state
 	}
 }
+
 const styles = StyleSheet.create({
 	viewSearch: {
 		paddingVertical: 10,
@@ -86,6 +85,6 @@ const styles = StyleSheet.create({
 	
 })
 
-export default TabBar
+export default connect(mapStateToProps)(TabBar);
 
 
