@@ -18,7 +18,7 @@ const TabBarDetail = (props) => (
 				  </View>
 					<View style={styles.iconMarket}>
 				    <TouchableOpacity 
-				      onPress={this.onPressMarket}
+				      onPress={()=>this.onPressMarket(props)}
 						>
 						  <View style={styles.textMarket}>
 						    <Text style={{color: '#fff'}}>{props.cartItem.length}</Text>
