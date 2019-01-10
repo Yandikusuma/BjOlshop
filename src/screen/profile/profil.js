@@ -4,6 +4,8 @@ import TabBarFooter from '../../component/tabBarFooter';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import ProfileLogged from './profileLogged';
 import ProfileLoggin from './profileLoggin';
+import {connect} from 'react-redux'
+
 
 
 
@@ -24,12 +26,18 @@ class Profile extends Component{
 						source={require('../../../image/bjOlshop.jpg')}
 					/>
 				</View>
-		    {/*<ProfileLoggin navigator={this.props.navigator}/>*/}
-				<ProfileLogged navigator={this.props.navigator} />
+				{this.props.auth.success === true ?
+					<ProfileLogged navigator={this.props.navigator}/>
+					:
+					<ProfileLoggin navigator={this.props.navigator}/>
+				}
 			</View>
 		)
 	}
 }
+const mapStateToProps = state => ({
+  auth: state.auth
+});
 
 const styles = StyleSheet.create({
 	sliderHome: {
@@ -42,4 +50,4 @@ const styles = StyleSheet.create({
 	},
 })
 
-export default Profile
+export default connect(mapStateToProps)(Profile)

@@ -38,7 +38,7 @@ class ProductKeranjang extends Component{
 				  		<View style={styles.textIcon}>
 				    	  <View style={styles.text}>
 				  		  	<Text>Merek: {item.merek}</Text>
-				  		  	<Text>Harga: {item.harga}</Text>						
+				  		  	<Text>Harga: IDR{item.harga}</Text>						
 				  		  </View>
 				  		  <View style={styles.delate}>
 									<TouchableOpacity

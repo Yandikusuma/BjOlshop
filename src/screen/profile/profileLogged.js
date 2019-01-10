@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, TouchableOpacity, Text, ScrollView } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import {connect} from 'react-redux'
+import { logoutUser } from '../../action/AuthActions'
+import { AUTH_USER_LOGOUT } from '../../action/types';
 
 
 class ProfileLogged extends Component{
@@ -107,7 +110,10 @@ class ProfileLogged extends Component{
 			  		</TouchableOpacity>
 			  	</View>
 			  	<View style={styles.viewKeluar}>
-			  			<TouchableOpacity style={styles.buttonTentang}>
+							<TouchableOpacity 
+								style={styles.buttonTentang}
+								onPress={this.props.logOut}
+							>
 			  				<Icon name="sign-out" size={25} color="red" />
 			  				<View style={styles.viewIcon}>
 			  			    <Text style={styles.textOut}>Keluar</Text>
@@ -118,6 +124,16 @@ class ProfileLogged extends Component{
 			  </View>
 			</ScrollView>
 		)
+	}
+}
+
+const mapStateToProps = state => ({
+	auth: state.auth
+})
+
+const mapDispacthToProps = dispatch => {
+	return{
+		logOut: () => dispatch({type: AUTH_USER_LOGOUT})
 	}
 }
 
@@ -225,4 +241,4 @@ const styles = StyleSheet.create({
 	}
 })
 
-export default ProfileLogged
+export default connect(mapStateToProps, mapDispacthToProps)(ProfileLogged)

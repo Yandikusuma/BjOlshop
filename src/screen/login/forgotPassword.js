@@ -18,7 +18,7 @@ export default class ForgotPassword extends Component{
 				<View style={styles.viewInput}>
 					<TextInput 
 						placeholder="Alamat Email"
-						placeholderTextColor="black"
+						placeholderTextColor="#b3bec3"
 						onChangeText={(text) => this.setState({text})}
 			    	style={styles.textInput}
 			    	underlineColorAndroid="transparent"
@@ -27,7 +27,7 @@ export default class ForgotPassword extends Component{
 				<View style={styles.viewInput}>
 					<TextInput 
 						placeholder="Old Password"
-						placeholderTextColor="black"
+						placeholderTextColor="#b3bec3"
 						onChangeText={(text) => this.setState({text})}
 			    	style={styles.textInput}
 			    	underlineColorAndroid="transparent"
@@ -36,7 +36,7 @@ export default class ForgotPassword extends Component{
 				<View style={styles.viewInput}>
 					<TextInput 
 						placeholder="New Password"
-						placeholderTextColor="black"
+						placeholderTextColor="#b3bec3"
 						onChangeText={(text) => this.setState({text})}
 			    	style={styles.textInput}
 			    	underlineColorAndroid="transparent"
@@ -45,7 +45,7 @@ export default class ForgotPassword extends Component{
 				<View style={styles.viewInput}>
 					<TextInput 
 						placeholder="Confirm Password"
-						placeholderTextColor="black"
+						placeholderTextColor="#b3bec3"
 						onChangeText={(text) => this.setState({text})}
 			    	style={styles.textInput}
 			    	underlineColorAndroid="transparent"

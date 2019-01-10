@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "896637299368",
+    "firebase_url": "https://bjolshop-f85b4.firebaseio.com",
+    "project_id": "bjolshop-f85b4",
+    "storage_bucket": "bjolshop-f85b4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:896637299368:android:09f8aaf7f253403c",
+        "android_client_info": {
+          "package_name": "com.bjolshop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "896637299368-670e6g2arppij74dc5nngre6u95bbs3h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.bjolshop",
+            "certificate_hash": "5e5682e487b0ec77ba337a88bbd5b575b9c4eaea"
+          }
+        },
+        {
+          "client_id": "896637299368-delnisovnjars4qm1aoj5pasce28hh0k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCbQTwKu1uPxNpBADlg8G-UcvS1cWz-els"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "896637299368-delnisovnjars4qm1aoj5pasce28hh0k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

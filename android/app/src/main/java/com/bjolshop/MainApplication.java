@@ -3,6 +3,8 @@ package com.bjolshop;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import io.invertase.firebase.auth.RNFirebaseAuthPackage;
+import io.invertase.firebase.RNFirebasePackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
@@ -25,7 +27,8 @@ import java.util.List;
 //     @Override
 //     protected List<ReactPackage> getPackages() {
 //       return Arrays.<ReactPackage>asList(
-//           new MainReactPackage()
+//           new MainReactPackage(),
+            //new RNFirebasePackage()
 //         , new VectorIconsPackage()
 //       );
 //     }
@@ -63,7 +66,9 @@ public class MainApplication extends NavigationApplication {
          return Arrays.<ReactPackage>asList(
              // eg. new VectorIconsPackage()
              new VectorIconsPackage(),
-             new LinearGradientPackage()
+             new LinearGradientPackage(),
+             new RNFirebasePackage(),
+             new RNFirebaseAuthPackage() 
          );
      }
      

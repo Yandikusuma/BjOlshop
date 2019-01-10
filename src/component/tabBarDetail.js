@@ -32,7 +32,7 @@ const TabBarDetail = (props) => (
 
 const mapStateToProps = (state) => {
 	return{
-		cartItem: state
+		cartItem: state.cartItem
 	}
 }
 

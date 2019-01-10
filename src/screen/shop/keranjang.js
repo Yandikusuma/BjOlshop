@@ -27,7 +27,7 @@ class Keranjang extends Component{
 }
 const mapStateToProps = (state) => {
 	return{
-		cartItem: state
+		cartItem: state.cartItem
 	}
 }
 

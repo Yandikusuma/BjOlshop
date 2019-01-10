@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, TextInput, TouchableOpacity, ActivityIndicator } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
+import { connect } from 'react-redux';
+import { loginUser } from '../../action/AuthActions';
+
 
 
 class Login extends Component{
@@ -9,6 +12,43 @@ class Login extends Component{
 		navBarHidden: true
 
 		};
+  state = {
+  	user: '',
+  	password: ''
+  }
+  onChangeUser = text => {
+  	this.setState({
+  		user: text
+  	})
+  }  
+  onChangePassword = text => {
+  	this.setState({
+  		password: text
+  	})
+	}
+	onPressLogin = () => {
+		this.props.loginUser(this.state.user, this.state.password);
+		if(this.props.auth.success){
+			this.props.navigator.push({
+				screen: 'Profile'
+			})
+		}
+	}
+	renderButtons(){
+		if(this.props.auth.loading){
+			return <ActivityIndicator />;
+		}else{
+			return(
+				<TouchableOpacity
+					onPress={this.onPressLogin.bind(this)}
+				>
+					<LinearGradient colors={[ '#99ff99', '#0088cc']} style={styles.buttonLogin}>
+			      <Text style={styles.textLogin}>Masuk</Text>
+					</LinearGradient>
+				</TouchableOpacity>
+			)
+		}
+	}
 		
 	render(){
 		return(
@@ -20,28 +60,31 @@ class Login extends Component{
 			    <TextInput
 			    	placeholder="Alamat Email"
 			    	placeholderTextColor="#bfbfbf"
-			    	onChangeText={(text) => this.setState({text})}
+			    	onChangeText={this.onChangeUser.bind(this)}
 			    	style={styles.textInput}
-			    	underlineColorAndroid="transparent"
+						underlineColorAndroid="transparent"
+						value={this.state.user}
 			    />
 			    <TextInput
 			    	placeholder="Kata Sandi"
 			    	placeholderTextColor="#bfbfbf"
-			    	onChangeText={(text) => this.setState({text})}
+			    	onChangeText={this.onChangePassword.bind(this)}
 			    	style={styles.textInput}
 			    	underlineColorAndroid="transparent"
-			    	secureTextEntry
+						secureTextEntry
+						value={this.state.password}
 					/>
-					<TouchableOpacity>
-					  <LinearGradient colors={[ '#99ff99', '#0088cc']} style={styles.buttonLogin}>
-			      	<Text style={styles.textLogin}>Masuk</Text>
-						</LinearGradient>
-					</TouchableOpacity>
+					<Text style={{color: 'red'}}>{this.props.auth.errorLogin}</Text>
+          {this.renderButtons()}
 				</View>
 			</LinearGradient>
 		)
 	}
 }
+
+const mapStateToProps = state => ({
+  auth: state.auth
+});
 
 
 const styles = StyleSheet.create({
@@ -74,4 +117,7 @@ const styles = StyleSheet.create({
 	},
 })
 
-export default Login
+export default connect(
+  mapStateToProps,
+  { loginUser }
+)(Login);
